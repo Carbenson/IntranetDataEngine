@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>选客器</title>
+
+    <meta content="金融矿工内网数据引擎" name="description" />
+    <meta content="梁晓健" name="author" />
+    <link rel="stylesheet" type="text/css" href="../styles/plugins/simple-line-icons/simple-line-icons.css?t=1510724154" />
+    <!-- <link rel="stylesheet" type="text/css" href="../styles/plugins/bootstrap/css/bootstrap.min.css?t=1510724154" />     -->
+    <link rel="stylesheet" type="text/css" href="../styles/base.css?t=1510724154" />
+    <link rel="stylesheet" type="text/css" href="../styles/customer-selector.css?t=1510724154" />
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="nav-header"></div>
+        <div class="no-result hide">
+            <table>
+                <tr>
+                    <td>
+                        <img src="../images/no_results.png" />
+                        <div class="clear-10"></div>
+                        <p>未找到搜索结果！</p>
+                        <p>请确保输入正确的12位资金账号，且无空格。</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="main-content ">
+            <div class="clear-header "></div>
+            <div class="clear-10"></div>
+            <div class="row tool-bar">
+                <div class="col-50">
+                    <button id="btn_back" class="btn btn-default" type="button">
+                        <i class="icon-arrow-left"></i>
+                        返回
+                    </button>
+                </div>
+                <div class="col-50 update-time">
+                    <p>
+                        数据更新时间：
+                        <span id="update_time">2017-11-03</span>
+                    </p>
+                </div>
+            </div>
+            <!-- 客户信息 start -->
+            <div class="custom-info">
+                <div class="row content">
+                    <div id="custom_name" class="col-50">
+                        张志强 Innovation
+                    </div>
+                    <div class="col-50">
+                        <button id="btn_send_sms" type="button" class="btn ">发送短信</button>
+                    </div>
+                </div>
+                <div class="row content">
+                    <div class="col-20">
+                        <p class="p-name">资金账号</p>
+                        <p id="p_account" class="p-value">280000135246</p>
+                    </div>
+                    <div class="col-20">
+                        <p class="p-name">电话号码</p>
+                        <p id="p_tel" id="p_ager" class="p-value">13658975684</p>
+                    </div>
+                    <div class="col-20">
+                        <p class="p-name">最近备注时间</p>
+                        <p id="p_mark_time" class="p-value">20170510</p>
+                    </div>
+                    <div class="col-20">
+                        <p class="p-name">最近交易时间</p>
+                        <p id="p_trade_time" class="p-value">20171010</p>
+                    </div>
+                    <div class="col-10">
+                        <p class="p-name">性别</p>
+                        <p id="p_gender" class="p-value">男</p>
+                    </div>
+                    <div class="col-10">
+                        <p class="p-name">年龄</p>
+                        <p id="p_age" class="p-value">38</p>
+                    </div>
+                </div>
+            </div>
+             <!-- 客户信息 end -->
+
+
+            
+        </div>
+
+    </div>
+</body>
+
+</html>
