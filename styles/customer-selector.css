@@ -17,13 +17,12 @@
 }
 
 .no-result table p {
-    font-size: 18px;
     color: #6E819B;
-    line-height: 27px;
 }
 
 .main-content {
     margin: 0 40px;
+    height: 100%;
 }
 
 .main-content #btn_back {
@@ -84,17 +83,28 @@
     font-family: STHeitiTC;
 }
 
-.p-name {
+.font-size-16 {
     font-size: 16px;
-    color: #3A506D;
     line-height: 24px;
+    font-weight: 500;
+}
+
+.font-size-18 {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.p-name {
+    color: #3A506D;
 }
 
 .p-value {
-    font-size: 16px;
     color: #1E2A38;
-    line-height: 24px;
-    font-weight: 600;
 }
 
 .p-right {
@@ -104,11 +114,6 @@
 
 .text-number {
     font-family: HelveticaNeue;
-}
-
-.custom-info .p-value {
-    font-size: 18px;
-    line-height: 27px;
 }
 
 .blue {
@@ -145,10 +150,9 @@
     line-height: 50px;
     color: #6E819B;
     background-color: #F4F9FF;
-    font-size: 16px;
     cursor: pointer;
-    font-weight: 600;
     margin-right: 3px;
+    font-weight: 600;
 }
 
 .tab-radio:checked+.tab-handler {
@@ -178,11 +182,12 @@
     width: 100%;
     background-color: #FFFFFF;
     opacity: 0;
-    height: calc(100vh - 360px);
+    height: -webkit-calc(100vh - 370px);
+    height: -moz-calc(100vh - 370px);
+    height: calc(100vh - 370px);
 }
 
 .scroll-content {
-    height: 100%;
     overflow: hidden;
 }
 
@@ -193,10 +198,7 @@
 /* ----- Tab1 业务关系 start ----- */
 
 .sub-title {
-    font-size: 16px;
     color: #2794E8;
-    font-weight: 600;
-    line-height: 24px;
     margin-top: 20px;
     margin-left: 20px;
     display: -webkit-box;
@@ -204,6 +206,7 @@
     display: -webkit-flex;
     display: -moz-box;
     display: flex;
+    font-weight: 600;
 }
 
 .sub-title .dot {
@@ -214,9 +217,9 @@
     border-radius: 4px;
     background-color: #2794E8;
     vertical-align: middle;
-    line-height: 24px;
+    line-height: 27px;
     margin-right: 5px;
-    margin-top: 9px;
+    margin-top: 8px;
 }
 
 .sub-content {
@@ -248,13 +251,6 @@
     margin-left: 20px;
 }
 
-#tab1-c1 .p-name {
-    font-size: 18px;
-    line-height: 27px;
-    color: #3A506D;
-    font-weight: 600;
-}
-
 #tab1-c2 {
     background: #FFFFFF;
     border: 1px solid #C6CFD6;
@@ -266,17 +262,17 @@
     margin-bottom: 20px;
 }
 
-#tab1-c2 .p-name {
-    font-size: 16px;
-}
-
 #tab1-c2 .sub-content .p-value {
     margin-bottom: 10px;
 }
+
 #tab1-c2 .p-value span {
     margin-left: 20px;
 }
+
 #tab1-c3 {
+    height: -webkit-calc(100% - 42px);
+    height: -moz-calc(100% - 42px);
     height: calc(100% - 42px);
     background: #FFFFFF;
     border: 1px solid #C6CFD6;
@@ -285,14 +281,228 @@
     border-radius: 4px;
     margin: 20px;
 }
+
 #tab1-c3 .p-name {
-    font-size: 18px;
-    line-height: 27px;
-    font-weight: 600;
     margin-bottom: 10px;
 }
+
 #tab1-c3 .p-name i {
     color: #F64060;
 }
 
+
 /* ----- Tab1 业务关系 end ----- */
+
+
+/* ----- 弹出层 start ----- */
+
+#mask1 {
+    display: none;
+    background: rgba(0, 0, 0, 0.60);
+    ;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+}
+#mask2 {
+    display: none;
+    background: rgba(0, 0, 0, 0.60);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 7;
+}
+div[id^="modal_"] .p-header {
+    text-align: center;
+    color: #3A506D;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+}
+div[id^="modal_"] button {
+    color: #FFFFFF;
+    background-color: #96989B;
+    font-size: 14px;
+    width: 68px;
+    height: 30px;
+}
+textarea+.input-footer {
+    position: relative;
+    font-size: 14px;
+    color: #3A506D;
+    line-height: 21px;
+    top: -40px;
+    float: right;
+    right: 20px;
+    height: 0;
+}
+#modal_send_sms {
+    display: none;
+    background: #FFFFFF;
+    width: 700px;
+    height: 835px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -350px;
+    margin-top: -420px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    z-index: 6;
+}
+
+#modal_send_sms .content {
+    width: 620px;
+    height: 795px;
+    margin: 20px 40px;
+}
+
+#modal_send_sms .sms-record {
+    width: 620px;
+    height: 265px;
+    border: 1px solid #C6CFD6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top: 22px;
+}
+
+textarea {
+    border: 1px solid #C6CFD6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top: 20px;
+    line-height: 24px;
+    padding: 10px;
+    color: #3A506D;
+    font-family: STHeitiTC;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #B3BBCF;
+}
+
+textarea:-moz-placeholder {
+    color: #B3BBCF;
+}
+
+textarea::-moz-placeholder {
+    color: #B3BBCF;
+}
+
+textarea:-ms-input-placeholder {
+    color: #B3BBCF;
+}
+
+#textarea_sms_content {
+    width: 600px;
+    height: 100px;
+}
+
+.modal-tool-bar {
+    margin-top: 10px;
+}
+
+.modal-tool-bar p {
+    font-size: 12px;
+    color: #808C9D;
+    line-height: 18x;
+    height: 30px;
+    float: right;
+}
+
+#modal_send_sms i {
+    color: #F98321;
+    font-size: 24px;
+    position: relative;
+    top: 20%;
+    margin-left: 10px;
+}
+
+#modal_send_sms .model-sms {
+    width: 566px;
+    height: 36px;
+    font-size: 14px;
+    line-height: 36px;
+    background: #FFFFFF;
+    color: #FE7500;
+    border: 1px solid #FFC89A;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 0px 10px;
+    margin-top: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.hover-show {
+    position: absolute;
+    width: 566px;
+    height: auto;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 21px;
+    white-space: normal;
+    background: #5F5F5F;
+    margin-top: 10px;
+    margin-left: -10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px;
+    display: none;
+}
+
+.model-sms:hover .hover-show {
+    display: block;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-width: 0 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #5F5F5F;
+    margin-left: 20px;
+    margin-top: -18px;
+    position: absolute;
+}
+
+#modal_send_sms .icon-close {
+    margin-top: 26px;
+}
+
+#modal_create_sms_model {
+    display: none;
+    background: #FFFFFF;
+    width: 570px;
+    height: 315px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -285px;
+    margin-top: -160px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    z-index: 8;
+}
+
+#modal_create_sms_model .content {
+    width: 510px;
+    height: 275px;
+    margin: 20px 30px;
+}
+
+#textarea_sms_model {
+    width: 490px;
+    height: 158px;
+}
+/* ----- 弹出层 end ----- */

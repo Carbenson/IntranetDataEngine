@@ -18,12 +18,13 @@
     <link rel="stylesheet" type="text/css" href="../styles/base.css?t=1510724154" />
     <link rel="stylesheet" type="text/css" href="../styles/customer-selector.css?t=1510724154" />
 
-    <script src="../scripts/plugins/jquery-3.2.1.min.js"></script>
-    <script src="../scripts/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
 </head>
 
 
-<body>
+<body class="font-size-16">
+    <div id="mask1"></div>
+    <div id="mask2"></div>
     <div class="main-container">
         <div class="nav-header"></div>
         <div class="no-result hide">
@@ -44,7 +45,7 @@
             <div class="clear-10"></div>
             <div class="row tool-bar">
                 <div class="col-50">
-                    <button id="btn_back" class="btn btn-default" type="button">
+                    <button id="btn_back" class="btn btn-default bold" type="button">
                         <i class="icon-arrow-left"></i>
                         返回
                     </button>
@@ -52,7 +53,7 @@
                 <div class="col-50 update-time">
                     <p>
                         数据更新时间：
-                        <span id="update_time">2017-11-03</span>
+                        <span id="update_time" class="bold">2017-11-03</span>
                     </p>
                 </div>
             </div>
@@ -68,28 +69,28 @@
                 </div>
                 <div class="row content">
                     <div class="col-20">
-                        <p class="p-name">资金账号</p>
-                        <p id="p_account" class="p-value text-number">280000135246</p>
+                        <p class="p-name font-size-16">资金账号</p>
+                        <p id="p_account" class="p-value font-size-18 bold text-number">280000135246</p>
                     </div>
                     <div class="col-20">
-                        <p class="p-name">电话号码</p>
-                        <p id="p_tel" id="p_ager" class="p-value text-number">13658975684</p>
+                        <p class="p-name font-size-16">电话号码</p>
+                        <p id="p_tel" id="p_ager" class="p-value font-size-18 bold text-number">13658975684</p>
                     </div>
                     <div class="col-20">
-                        <p class="p-name">最近备注时间</p>
-                        <p id="p_mark_time" class="p-value text-number">20170510</p>
+                        <p class="p-name font-size-16">最近备注时间</p>
+                        <p id="p_mark_time" class="p-value font-size-18 bold text-number">20170510</p>
                     </div>
                     <div class="col-20">
-                        <p class="p-name">最近交易时间</p>
-                        <p id="p_trade_time" class="p-value text-number">20171010</p>
+                        <p class="p-name font-size-16">最近交易时间</p>
+                        <p id="p_trade_time" class="p-value font-size-18 bold text-number">20171010</p>
                     </div>
                     <div class="col-10">
-                        <p class="p-name">性别</p>
-                        <p id="p_gender" class="p-value">男</p>
+                        <p class="p-name font-size-16">性别</p>
+                        <p id="p_gender" class="p-value font-size-18 bold">男</p>
                     </div>
                     <div class="col-10">
-                        <p class="p-name">年龄</p>
-                        <p id="p_age" class="p-value text-number">38</p>
+                        <p class="p-name font-size-16">年龄</p>
+                        <p id="p_age" class="p-value font-size-18 bold text-number">38</p>
                     </div>
                 </div>
             </div>
@@ -111,35 +112,35 @@
                                     </div>
                                     <div class="row sub-content auto-wrap">
                                         <div class="col-20">
-                                            <p class="p-name">期货：
+                                            <p class="p-name bold">期货：
                                                 <i class="fa fa-check-circle blue"></i>
                                             </p>
                                         </div>
                                         <div class="col-20">
-                                            <p class="p-name">期货：
+                                            <p class="p-name bold">期货：
                                                 <i class="fa fa-check-circle blue"></i>
                                             </p>
                                         </div>
                                         <div class="col-20">
-                                            <p class="p-name">期货：
+                                            <p class="p-name bold">期货：
                                                 <i class="fa fa-check-circle blue"></i>
                                             </p>
                                         </div>
                                         <div class="col-20">
-                                            <p class="p-name">期货：
+                                            <p class="p-name bold">期货：
                                                 <i class="fa fa-check-circle blue"></i>
                                             </p>
                                         </div>
                                         <div class="col-20">
-                                            <p class="p-name">期货：
+                                            <p class="p-name bold">期货：
                                                 <i class="fa fa-check-circle blue"></i>
                                             </p>
                                         </div>
-                                        <!-- <div class="col-20">
-                                            <p class="p-name">期货：
+                                        <div class="col-20">
+                                            <p class="p-name bold">期货：
                                                 <i class="fa fa-check-circle blue"></i>
                                             </p>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="tab1-c2">
@@ -149,70 +150,70 @@
                                     </div>
                                     <div class="row sub-content auto-wrap">
                                         <div class="col-25">
-                                            <p class="p-name">身份证过期：</p>
+                                            <p class="p-name font-size-16">身份证过期：</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-value p-right text-number">20170526</p>
+                                            <p class="p-value font-size-16 bold p-right text-number">20170526</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-name">客户经理：</p>
+                                            <p class="p-name font-size-16">客户经理：</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-value p-right">老健飞</p>
+                                            <p class="p-value font-size-16 bold p-right">老健飞</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-name">测评日期：</p>
+                                            <p class="p-name font-size-16">测评日期：</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-value p-right text-number">20170526</p>
+                                            <p class="p-value font-size-16 bold p-right text-number">20170526</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-name">开户日期：</p>
+                                            <p class="p-name font-size-16">开户日期：</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-value p-right text-number">20170526</p>
+                                            <p class="p-value font-size-16 bold p-right text-number">20170526</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-name">风险级别：</p>
+                                            <p class="p-name font-size-16">风险级别：</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-value p-right">权益类</p>
+                                            <p class="p-value font-size-16 bold p-right">权益类</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-name">投资品种：</p>
+                                            <p class="p-name font-size-16">投资品种：</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-value p-right text-number">C3</p>
+                                            <p class="p-value font-size-16 bold p-right text-number">C3</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-name">投资期限：</p>
+                                            <p class="p-name font-size-16">投资期限：</p>
                                         </div>
                                         <div class="col-25">
-                                            <p class="p-value p-right text-number">0~1</p>
+                                            <p class="p-value font-size-16 bold p-right text-number">0~1</p>
                                         </div>
                                     </div>
                                     <div style="height:1px;background-color:#C6CFD6;margin:-10px 20px 0 20px;"></div>
                                     <div class="row sub-content auto-wrap">
-                                        <div class="col-20">
-                                            <p class="p-name">关联账户：</p>
+                                        <div class="col-15">
+                                            <p class="p-name font-size-16">关联账户：</p>
                                         </div>
-                                        <div class="col-80">
+                                        <div class="col-85">
                                             <div class="row auto-wrap">
                                                 <div class="col-50">
-                                                    <p class="p-value">张望时
+                                                    <p class="p-value font-size-16 bold">张望时
                                                         <span class="text-number">280000156641</span>
                                                     </p>
                                                 </div>
                                                 <div class="col-50">
-                                                    <p class="p-value">张望时
+                                                    <p class="p-value font-size-16 bold">张望时
                                                         <span class="text-number">280000156641</span>
                                                     </p>
                                                 </div>
-                                                <!-- <div class="col-50">
-                                                    <p class="p-value">张望时
+                                                <div class="col-50">
+                                                    <p class="p-value font-size-16 bold">张望时
                                                         <span class="text-number">280000156641</span>
                                                     </p>
-                                                </div> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -225,10 +226,10 @@
                                         <div>未开通</div>
                                     </div>
                                     <div class="sub-content">
-                                        <p class="p-name">期权：
+                                        <p class="p-name bold">期权：
                                             <i class="fa fa-exclamation-circle"></i>
                                         </p>
-                                        <p class="p-name">新三板：
+                                        <p class="p-name bold">新三板：
                                             <i class="fa fa-exclamation-circle"></i>
                                         </p>
                                     </div>
@@ -274,10 +275,139 @@
         </div>
 
     </div>
+
+
+    <!-- 弹出层 start -->
+    <div id="modal_send_sms">
+        <div class="content">
+            <p class="p-header">发送短信</p>
+            <div class="sms-record"></div>
+            <textarea id="textarea_sms_content" class="font-size-16" placeholder="请输入短信内容......"></textarea>
+            <span class="input-footer">剩余字数：
+                <span class="text-number">63</span>
+            </span>
+            <div class="row modal-tool-bar">
+                <div class="col-50" style="text-align:right">
+                    <button id="btn_confirm_send_sms" type="button" class="btn disabled" style="margin-right: 10px;">发送</button>
+                </div>
+                <div class="col-50">
+                    <button id="btn_cancel_send_sms" type="button" class="btn" style="margin-left: 10px;">取消</button>
+                    <p>（点此添加短信模板）
+                        <i id="btn_create_sms_model" class="icon-plus"></i>
+                    </p>
+                </div>
+            </div>
+            <div id="container_sms_model">
+                <div class="row">
+                    <div class="model-sms">
+                        一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三
+                        <div class="hover-show">
+                            <div class="triangle"></div>
+                            一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三
+                        </div>
+                    </div>
+                    <i class="icon-close"></i>
+                </div>
+                <div class="row">
+                    <div class="model-sms">
+                        一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三
+                        <div class="hover-show">
+                            <div class="triangle"></div>
+                            一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三
+                        </div>
+                    </div>
+                    <i class="icon-close"></i>
+                </div>
+                <div class="row">
+                    <div class="model-sms">
+                        一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三
+                        <div class="hover-show">
+                            <div class="triangle"></div>
+                            一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三
+                        </div>
+                    </div>
+                    <i class="icon-close"></i>
+                </div>
+                <div class="row">
+                    <div class="model-sms">
+                        一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三
+                        <div class="hover-show">
+                            <div class="triangle"></div>
+                            一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三
+                        </div>
+                    </div>
+                    <i class="icon-close"></i>
+                </div>
+                <div class="row">
+                    <div class="model-sms">
+                        一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三
+                        <div class="hover-show">
+                            <div class="triangle"></div>
+                            一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三
+                        </div>
+                    </div>
+                    <i class="icon-close"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="modal_create_sms_model">
+        <div class="content">
+            <p class="p-header">编辑短信模板</p>
+            <textarea id="textarea_sms_model" class="font-size-16" placeholder="请输入短信模板内容......"></textarea>
+            <span class="input-footer">剩余字数：
+                <span class="text-number">63</span>
+            </span>
+            <div class="row modal-tool-bar">
+                <div class="col-50" style="text-align:right">
+                    <button id="btn_save_create_sms_model" type="button" class="btn disabled" style="margin-right: 10px;">保存</button>
+                </div>
+                <div class="col-50">
+                    <button id="btn_cancel_create_sms_model" type="button" class="btn" style="margin-left: 10px;">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 弹出层 end -->
+
+    <script src="../scripts/plugins/jquery-3.2.1.min.js"></script>
+    <script src="../scripts/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <script>
-        $('.scroll-content').slimscroll({
-            height: 'auto'
-        });
+        window.onload = () => {
+            $('.scroll-content').slimscroll({
+                height: 'auto'
+            });
+            var btn_send_sms = document.getElementById('btn_send_sms');
+            var mask1 = document.getElementById('mask1');
+            var modal_send_sms = document.getElementById('modal_send_sms');
+            btn_send_sms.onclick = () => {
+                mask1.style.display = 'block';
+                modal_send_sms.style.display = 'block';
+            };
+
+            var btn_cancel_send_sms = document.getElementById('btn_cancel_send_sms');
+            btn_cancel_send_sms.onclick = () => {
+                mask1.style.display = 'none';
+                modal_send_sms.style.display = 'none';
+            }
+
+            var btn_create_sms_model = document.getElementById('btn_create_sms_model');
+            var mask2 = document.getElementById('mask2');
+            var modal_create_sms_model = document.getElementById('modal_create_sms_model');
+            btn_create_sms_model.onclick = () => {
+                mask2.style.display = 'block';
+                modal_create_sms_model.style.display = 'block';
+            }
+
+            var btn_cancel_create_sms_model = document.getElementById('btn_cancel_create_sms_model');
+            btn_cancel_create_sms_model.onclick = () => {
+                mask2.style.display = 'none';
+                modal_create_sms_model.style.display = 'none';
+            }
+        };
     </script>
 </body>
 
