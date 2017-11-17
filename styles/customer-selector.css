@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 .main-container {
     width: 100%;
     height: 100%;
@@ -10,31 +9,34 @@
     height: 100%;
 }
 
-.no-result table{
+.no-result table {
     width: 100%;
     height: 100%;
     vertical-align: middle;
     text-align: center;
 }
 
-.no-result table p{
+.no-result table p {
     font-size: 18px;
-    color:#6E819B;
+    color: #6E819B;
     line-height: 27px;
 }
 
-.main-content{
+.main-content {
     margin: 0 40px;
 }
+
 .main-content #btn_back {
     height: 30px;
     width: 76px;
     font-family: STHeitiTC;
     padding: 0;
 }
-.main-content #btn_back i{
-    margin-right: 3px; 
+
+.main-content #btn_back i {
+    margin-right: 3px;
 }
+
 .main-content .tool-bar .update-time {
     text-align: right;
     color: #6E819B;
@@ -45,48 +47,252 @@
     font-size: 14px;
 }
 
-.main-content #update_time{
+.main-content #update_time {
     font-family: HelveticaNeue;
 }
 
-.custom-info{
+.custom-info {
     margin-top: 20px;
     height: 150px;
     background: #FFFFFF;
-    box-shadow: 0px 2px 4px 1px rgba(0,0,0,0.20);
+    -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.20);
+    -moz-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.20);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
 }
-.custom-info .content{
+
+.custom-info .content {
     margin: 0 20px;
     padding-top: 20px;
 }
-.custom-info #custom_name{
+
+.custom-info #custom_name {
     font-size: 26px;
     color: #3A506D;
     line-height: 39px;
     font-weight: 600;
 }
-.custom-info #btn_send_sms{
+
+.custom-info #btn_send_sms {
     float: right;
     height: 39px;
     font-size: 14px;
-    color:#ffffff;
+    color: #ffffff;
     background-color: #00A5FF;
     font-family: STHeitiTC;
 }
-.custom-info .p-name {
+
+.p-name {
     font-size: 16px;
     color: #3A506D;
     line-height: 24px;
 }
-.custom-info .p-value {
-    font-family: HelveticaNeue;
-    font-size: 18px;
+
+.p-value {
+    font-size: 16px;
     color: #1E2A38;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.p-right {
+    text-align: right;
+    margin-right: 50%;
+}
+
+.text-number {
+    font-family: HelveticaNeue;
+}
+
+.custom-info .p-value {
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.blue {
+    color: #33A5FD;
+}
+
+
+/* ----- Tab页 start ----- */
+
+.my-tab {
+    width: 100%;
+    margin-top: 17px;
+}
+
+.tab-wrapper {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #F4F9FF;
+}
+
+.tab-wrapper .tab-radio {
+    display: none;
+}
+
+.tab-handler {
+    position: relative;
+    z-index: 2;
+    display: block;
+    float: left;
+    height: 50px;
+    width: 114px;
+    text-align: center;
+    line-height: 50px;
+    color: #6E819B;
+    background-color: #F4F9FF;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 3px;
+}
+
+.tab-radio:checked+.tab-handler {
+    color: #2794E8;
+    background-color: #FFFFFF;
+    cursor: default;
+    -webkit-box-shadow: -2px 0 rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05), 2px 0 rgba(0, 0, 0, 0.05), 0 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -2px 0 rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05), 2px 0 rgba(0, 0, 0, 0.05), 0 0px rgba(0, 0, 0, 0.5);
+    box-shadow: -2px 0 rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05), 2px 0 rgba(0, 0, 0, 0.05), 0 0px rgba(0, 0, 0, 0.5);
+    z-index: 4;
+}
+
+.tab-radio:checked+.tab-handler+.tab-content {
+    visibility: visible;
+    opacity: 1;
+    -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+.tab-wrapper .tab-content {
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    opacity: 0;
+    height: calc(100vh - 360px);
+}
+
+.scroll-content {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* ----- Tab页 end ----- */
+
+
+/* ----- Tab1 业务关系 start ----- */
+
+.sub-title {
+    font-size: 16px;
+    color: #2794E8;
+    font-weight: 600;
+    line-height: 24px;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+}
+
+.sub-title .dot {
+    height: 8px;
+    width: 8px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #2794E8;
+    vertical-align: middle;
+    line-height: 24px;
+    margin-right: 5px;
+    margin-top: 9px;
+}
+
+.sub-content {
+    margin-top: 20px;
+    margin-left: 33px;
+    margin-bottom: 20px;
+}
+
+.auto-wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+#tab1-c1 {
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#tab1-c1 .p-name {
+    font-size: 18px;
+    line-height: 27px;
+    color: #3A506D;
+    font-weight: 600;
+}
+
+#tab1-c2 {
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#tab1-c2 .p-name {
+    font-size: 16px;
+}
+
+#tab1-c2 .sub-content .p-value {
+    margin-bottom: 10px;
+}
+#tab1-c2 .p-value span {
+    margin-left: 20px;
+}
+#tab1-c3 {
+    height: calc(100% - 42px);
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin: 20px;
+}
+#tab1-c3 .p-name {
+    font-size: 18px;
     line-height: 27px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
-.custom-info #p_gender{
-    font-family: STHeitiTC;
-    font-weight: 600;
+#tab1-c3 .p-name i {
+    color: #F64060;
 }
+
+/* ----- Tab1 业务关系 end ----- */
