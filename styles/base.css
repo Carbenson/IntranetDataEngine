@@ -26,6 +26,10 @@ body {
     background: #F4F9FF 100%;
 }
 
+input {
+    text-indent: 10px;
+}
+
 .clear-10 {
     height: 10px;
 }
@@ -57,13 +61,18 @@ body {
 .row .col-10 {
     width: 10%;
 }
-
+.row .col-13 {
+    width: 13%;
+}
 .row .col-15 {
     width: 15%;
 }
 
 .row .col-16 {
     width: 16%;
+}
+.row .col-17 {
+    width: 17%;
 }
 
 .row .col-20 {
@@ -77,15 +86,22 @@ body {
 .row .col-30 {
     width: 30%;
 }
-
+.row .col-33 {
+    width: 33%;
+}
 .row .col-40 {
     width: 40%;
+}
+.row .col-45 {
+    width: 45%;
 }
 
 .row .col-50 {
     width: 50%;
 }
-
+.row .col-55 {
+    width: 55%;
+}
 .row .col-60 {
     width: 60%;
 }
@@ -144,7 +160,7 @@ body {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-    color: #333;
+    /* color: #333; */
     text-decoration: none;
 }
 
@@ -160,10 +176,9 @@ body {
 .btn[disabled],
 fieldset[disabled] .btn {
     cursor: not-allowed;
-    opacity: 0.65;
-    filter: alpha(opacity=65);
     -webkit-box-shadow: none;
     box-shadow: none;
+    background-color: #D1D9DF;
 }
 
 a.btn.disabled,
@@ -235,3 +250,4 @@ fieldset[disabled] .btn-default.focus {
     color: #fff;
     background-color: #333;
 }
+

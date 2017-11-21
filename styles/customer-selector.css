@@ -36,12 +36,12 @@
     margin-right: 3px;
 }
 
-.main-content .tool-bar .update-time {
+.main-content .main-tool-bar .update-time {
     text-align: right;
     color: #6E819B;
 }
 
-.main-content .tool-bar .update-time p {
+.main-content .main-tool-bar .update-time p {
     line-height: 33px;
     font-size: 14px;
 }
@@ -83,6 +83,12 @@
     font-family: STHeitiTC;
 }
 
+.font-size-14 {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 500;
+}
+
 .font-size-16 {
     font-size: 16px;
     line-height: 24px;
@@ -107,6 +113,12 @@
     color: #1E2A38;
 }
 
+.p-mark {
+    color: #6E819B;
+    font-size: 14px;
+    line-height: 21px;
+}
+
 .p-right {
     text-align: right;
     margin-right: 50%;
@@ -118,6 +130,24 @@
 
 .blue {
     color: #33A5FD;
+}
+
+.tool-bar i {
+    color: #F98321;
+    font-size: 24px;
+    position: relative;
+    top: 20%;
+}
+
+div[id^='model_container_'] i {
+    line-height: 36px;
+    color: #B4BBCF;
+    float: right;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 24px;
+    position: relative;
+    top: 20%;
 }
 
 
@@ -241,7 +271,7 @@
     flex-wrap: wrap;
 }
 
-#tab1-c1 {
+#tab1_c1 {
     background: #FFFFFF;
     border: 1px solid #C6CFD6;
     -webkit-border-radius: 4px;
@@ -251,7 +281,11 @@
     margin-left: 20px;
 }
 
-#tab1-c2 {
+#tab1_c1 .sub-content .p-name {
+    margin-bottom: 10px;
+}
+
+#tab1_c2 {
     background: #FFFFFF;
     border: 1px solid #C6CFD6;
     -webkit-border-radius: 4px;
@@ -262,18 +296,19 @@
     margin-bottom: 20px;
 }
 
-#tab1-c2 .sub-content .p-value {
+#tab1_c2 .sub-content .p-value {
     margin-bottom: 10px;
 }
 
-#tab1-c2 .p-value span {
+#tab1_c2 .p-value span {
     margin-left: 20px;
 }
 
-#tab1-c3 {
-    height: -webkit-calc(100% - 42px);
+#tab1_c3 {
+    /* height: -webkit-calc(100% - 42px);
     height: -moz-calc(100% - 42px);
-    height: calc(100% - 42px);
+    height: calc(100% - 42px); */
+    height: auto;
     background: #FFFFFF;
     border: 1px solid #C6CFD6;
     -webkit-border-radius: 4px;
@@ -282,11 +317,11 @@
     margin: 20px;
 }
 
-#tab1-c3 .p-name {
+#tab1_c3 .p-name {
     margin-bottom: 10px;
 }
 
-#tab1-c3 .p-name i {
+#tab1_c3 .p-name i {
     color: #F64060;
 }
 
@@ -294,17 +329,312 @@
 /* ----- Tab1 业务关系 end ----- */
 
 
+/* ----- Tab2 资金费率 start ----- */
+
+#tab2_c1 {
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin: 20px;
+    height: 226px;
+}
+
+#tab2_c1 .sub-content .p-value {
+    margin-bottom: 10px;
+}
+
+#tab2_c2 {
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-right: 20px;
+    height: 226px;
+}
+
+#tab2_c2 .sub-content .p-right {
+    margin-right: 20px;
+}
+
+#tab2_c2 .sub-content .p-value {
+    margin-bottom: 10px;
+}
+
+#tab2_c3 {
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 208px;
+}
+
+#tab2_c3 .sub-content .p-right {
+    margin-right: 80px;
+}
+
+#tab2_c3 .sub-content .p-value {
+    margin-bottom: 10px;
+}
+
+
+/* ----- Tab2 资金费率 end ----- */
+
+
+/* ----- Tab3 备注 end ----- */
+
+#tab3_c1 {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#tab3_c1 .search {
+    background: #FFFFFF;
+    border: 1px solid #B3BBCF;
+    border-radius: 4px;
+    height: 30px;
+    width: 232px;
+}
+
+#tab3_c1 .search input {
+    text-indent: 10px;
+    height: 27px;
+    width: 200px;
+    font-size: 12px;
+    border: 0px;
+    outline: 0!important;
+    box-shadow: none!important;
+    color: #3A506D;
+    font-family: inherit;
+}
+
+#tab3_c1 .search i {
+    font-size: 20px;
+    line-height: 30px;
+    color: #B3BBCF;
+    float: right;
+    margin-right: 3px;
+}
+
+#date_start {
+    height: 30px;
+    width: 124px;
+    float: right;
+    margin-right: 20px;
+}
+
+#date_start input {
+    font-size: 12px;
+}
+
+#date_end {
+    height: 30px;
+    width: 124px;
+    float: right;
+}
+
+#date_end input {
+    font-size: 12px;
+}
+
+#tab3_c1_content {
+    height: 463px;
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    border-radius: 4px;
+}
+
+#tab3_c2 {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+#tab3_c2 p {
+    height: 30px;
+    line-height: 30px;
+}
+
+#tab3_c2 .tool-bar p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #808C9D;
+    text-align: right;
+}
+
+div[id^='model_container_'] div[class^='model-'] {
+    font-size: 14px;
+    line-height: 36px;
+    background: #FFFFFF;
+    color: #FE7500;
+    border: 1px solid #FFC89A;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 0px 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: 600;
+    height: 36px;
+}
+
+#model_container_remark .model-remark {
+    width: 100%;
+}
+
+.model-remark:hover .hover-show {
+    display: block;
+    width: 426px;
+}
+
+#textarea_remark_content {
+    width: calc(100% - 20px);
+    height: 100px;
+}
+
+#btn_send_remark {
+    /* width:76px; */
+    height: 30px;
+    margin-top: 20px;
+    background: #00A5FF;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 14px;
+    color: #FFFFFF;
+}
+
+
+/* ----- Tab3 备注 end ----- */
+
+
+/* ----- Tab6 客户标签 start ----- */
+
+
+#tab6 img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 26px;
+}
+
+#tab6_c1 {
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    border-radius: 4px;
+    height: 514px;
+    margin: 20px;
+}
+
+#model_container_label_system {
+    margin: 0 20px;
+}
+#model_container_label_system .model-label {
+    background: #D2EDFF;
+    border-radius: 4px;
+    border: none;
+    color: #345A8D;
+}
+
+#model_container_label_system .label-info .hover-show {
+    margin-left: -280px;
+    width: 300px;
+    z-index: 8;
+}
+#model_container_label_system .label-info:hover .hover-show {
+    display: block;
+}
+#model_container_label_system .label-info .hover-show .triangle {
+    margin-left: 280px;
+}
+
+#tab6_c2 {
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    border-radius: 4px;
+    height: 514px;
+    margin: 20px 0;
+}
+#tab6_c2_nodata {
+    margin: 20px;
+    color: #808C9D;
+}
+
+#model_container_label_custom {
+    margin: 0 20px;
+}
+#model_container_label_custom .model-label {
+    background: #FFEAD9;
+    border-radius: 4px;
+    border: none;
+}
+#model_container_label_custom .label-info .hover-show {
+    margin-left: -285px;
+    width: 340px;
+    z-index: 8;
+}
+#model_container_label_custom .label-info:hover .hover-show {
+    display: block;
+}
+#model_container_label_custom .label-info .hover-show .triangle {
+    margin-left: 288px;
+}
+
+#tab6_c3 {
+    background: #FFFFFF;
+    width: 390px;
+    height: 514px;
+    margin: 20px 10px 20px 0;
+}
+#tab6_c3 .model-label {
+    margin-left: 20px;
+}
+#tab6_c3 p {
+    height: 30px;
+    line-height: 30px;
+}
+
+#tab6_c3 .tool-bar p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #808C9D;
+    text-align: right;
+    margin-top: 15px;
+}
+#tab6_c3 .label-info .hover-show {
+    margin-left: -300px;
+    width: 350px;
+    z-index: 8;
+}
+#tab6_c3 .label-info:hover .hover-show {
+    display: block;
+}
+#tab6_c3 .label-info .hover-show .triangle {
+    margin-left: 305px;
+}
+/* ----- Tab6 客户标签 end ----- */
+
+
 /* ----- 弹出层 start ----- */
 
 #mask1 {
     display: none;
     background: rgba(0, 0, 0, 0.60);
-    ;
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 5;
 }
+
 #mask2 {
     display: none;
     background: rgba(0, 0, 0, 0.60);
@@ -313,6 +643,18 @@
     position: absolute;
     z-index: 7;
 }
+
+div[id^="modal_"] {
+    display: none;
+    background: #FFFFFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
 div[id^="modal_"] .p-header {
     text-align: center;
     color: #3A506D;
@@ -320,13 +662,30 @@ div[id^="modal_"] .p-header {
     line-height: 27px;
     font-weight: 600;
 }
+
 div[id^="modal_"] button {
     color: #FFFFFF;
     background-color: #96989B;
     font-size: 14px;
+    line-height: 14px;
     width: 68px;
     height: 30px;
 }
+
+div[id^="modal_"] .modal-alert-info {
+    text-align: center;
+    color: #3A506D;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+div[id^="modal_"] .btn-confirm {
+    background-color: #34AEFD;
+}
+
 textarea+.input-footer {
     position: relative;
     font-size: 14px;
@@ -337,19 +696,12 @@ textarea+.input-footer {
     right: 20px;
     height: 0;
 }
+
 #modal_send_sms {
-    display: none;
-    background: #FFFFFF;
     width: 700px;
     height: 835px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
     margin-left: -350px;
     margin-top: -420px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
     z-index: 6;
 }
 
@@ -381,18 +733,22 @@ textarea {
     font-family: STHeitiTC;
 }
 
+input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     color: #B3BBCF;
 }
 
+input:-moz-placeholder,
 textarea:-moz-placeholder {
     color: #B3BBCF;
 }
 
+input::-moz-placeholder,
 textarea::-moz-placeholder {
     color: #B3BBCF;
 }
 
+input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
     color: #B3BBCF;
 }
@@ -414,37 +770,12 @@ textarea:-ms-input-placeholder {
     float: right;
 }
 
-#modal_send_sms i {
-    color: #F98321;
-    font-size: 24px;
-    position: relative;
-    top: 20%;
-    margin-left: 10px;
-}
-
-#modal_send_sms .model-sms {
+#model_container_sms .model-sms {
     width: 566px;
-    height: 36px;
-    font-size: 14px;
-    line-height: 36px;
-    background: #FFFFFF;
-    color: #FE7500;
-    border: 1px solid #FFC89A;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    padding: 0px 10px;
-    margin-top: 20px;
-    overflow: hidden;
-    white-space: nowrap;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    cursor: pointer;
 }
 
 .hover-show {
     position: absolute;
-    width: 566px;
     height: auto;
     color: #FFFFFF;
     font-size: 14px;
@@ -462,6 +793,7 @@ textarea:-ms-input-placeholder {
 
 .model-sms:hover .hover-show {
     display: block;
+    width: 566px;
 }
 
 .triangle {
@@ -475,34 +807,76 @@ textarea:-ms-input-placeholder {
     position: absolute;
 }
 
-#modal_send_sms .icon-close {
-    margin-top: 26px;
-}
-
-#modal_create_sms_model {
-    display: none;
-    background: #FFFFFF;
+#modal_create_sms_model,
+#modal_create_remark_model {
     width: 570px;
     height: 315px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
     margin-left: -285px;
     margin-top: -160px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
     z-index: 8;
 }
 
-#modal_create_sms_model .content {
+#modal_create_sms_model .content,
+#modal_create_remark_model .content {
     width: 510px;
     height: 275px;
     margin: 20px 30px;
 }
 
-#textarea_sms_model {
+#textarea_sms_model,
+#textarea_remark_model {
     width: 490px;
     height: 158px;
 }
+
+#modal_create_label_model {
+    width: 600px;
+    height: 367px;
+    margin-left: -300px;
+    margin-top: -184px;
+    z-index: 8;
+}
+#modal_create_label_model .content {
+    width: 520px;
+    height: 327px;
+    margin: 20px 40px;
+}
+#modal_create_label_model .title-line {
+    margin-top: 20px;
+}
+#modal_create_label_model .title-line p {
+    margin-top: 5px; 
+}
+#textarea_label_model_title {
+    width: 420px;
+    height: 50px;
+    margin-top: 0;
+}
+#modal_create_label_model .detail-line {
+    margin-top: 15px;
+}
+#modal_create_label_model .detail-line p {
+    margin-top: 5px; 
+}
+#textarea_label_model_detail {
+    width: 420px;
+    height: 120px;
+    margin-top: 0;
+}
+
+#modal_alert1,
+#modal_alert2 {
+    width: 470px;
+    height: 180px;
+    z-index: 8;
+    margin-left: -235px;
+    margin-top: -90px;
+}
+
+#modal_alert1 .content,
+#modal_alert2 .content {
+    margin: 20px 30px;
+}
+
+
 /* ----- 弹出层 end ----- */
