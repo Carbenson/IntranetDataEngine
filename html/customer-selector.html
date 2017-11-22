@@ -107,7 +107,7 @@
                     <!--tab section 1-->
                     <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_1">
                     <label for="tab_radio_1" class="tab-handler">业务关系</label>
-                    <div class="tab-content">
+                    <div id="tab1" class="tab-content">
                         <div class="row scroll-content">
                             <div class="col-70">
                                 <div id="tab1_c1">
@@ -305,7 +305,7 @@
                     <!--tab section 2-->
                     <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_2">
                     <label for="tab_radio_2" class="tab-handler">资金费率</label>
-                    <div class="tab-content">
+                    <div id="tab2" class="tab-content">
                         <div class="row">
                             <div class="col-70">
                                 <div id="tab2_c1">
@@ -480,7 +480,7 @@
                     <!--tab section 3-->
                     <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_3">
                     <label for="tab_radio_3" class="tab-handler">备注</label>
-                    <div class="tab-content">
+                    <div id="tab3" class="tab-content">
                         <div class="row">
                             <div class="col-55">
                                 <div id="tab3_c1">
@@ -590,17 +590,908 @@
                     <!--tab section 4-->
                     <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_4">
                     <label for="tab_radio_4" class="tab-handler">盈亏</label>
-                    <div class="tab-content">
-                        4
+                    <div id="tab4" class="tab-content">
+                        <div class="row">
+                            <div class="col-40">
+                                <div id="tab4_c1">
+                                    <div class="my-tab">
+                                        <div class="tab-wrapper">
+                                            <!--tab4 section 1 1-->
+                                            <input type="radio" name="tab-radio-4" class="tab-radio" id="tab_radio_4_1_1" checked>
+                                            <label for="tab_radio_4_1_1" class="tab-handler">收益率</label>
+                                            <div class="tab-content">
+                                                <div class="container-tab-button">
+                                                    <input type="radio" name="tab-radio-4111" class="tab-radio" id="tab_radio_4_1_1_1" checked>
+                                                    <label for="tab_radio_4_1_1_1">今年</label>
+                                                    <input type="radio" name="tab-radio-4111" class="tab-radio" id="tab_radio_4_1_1_2">
+                                                    <label for="tab_radio_4_1_1_2">历史</label>
+                                                </div>
+                                            </div>
+                                            <!--tab4 section 1 2-->
+                                            <input type="radio" name="tab-radio-4" class="tab-radio" id="tab_radio_4_1_2">
+                                            <label for="tab_radio_4_1_2" class="tab-handler">总资产</label>
+                                            <div class="tab-content">
+                                                <div class="container-tab-button">
+                                                    <input type="radio" name="tab-radio-4112" class="tab-radio" id="tab_radio_4_1_2_1" checked>
+                                                    <label for="tab_radio_4_1_2_1">今年</label>
+                                                    <input type="radio" name="tab-radio-4112" class="tab-radio" id="tab_radio_4_1_2_2">
+                                                    <label for="tab_radio_4_1_2_2">历史</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab4_c2">
+                                    <div class="row sub-content auto-wrap">
+                                        <div class="col-20">
+                                            <p class="p-name font-size-16">偏好品种：</p>
+                                        </div>
+                                        <div class="col-30">
+                                            <p class="p-value font-size-16 bold p-right">小盘股</p>
+                                        </div>
+                                        <div class="col-30">
+                                            <p class="p-name font-size-16">偏好交易地点：</p>
+                                        </div>
+                                        <div class="col-20">
+                                            <p class="p-value font-size-16 bold p-right">广东佛山</p>
+                                        </div>
+                                        <div class="col-20">
+                                            <p class="p-name font-size-16">偏好时间：</p>
+                                        </div>
+                                        <div class="col-30">
+                                            <p class="p-value font-size-16 bold p-right text-number">9：30~10:30</p>
+                                        </div>
+                                        <div class="col-30">
+                                            <p class="p-name font-size-16">偏好交易终端：</p>
+                                        </div>
+                                        <div class="col-20">
+                                            <p class="p-value font-size-16 bold p-right">手机</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-60">
+                                <div id="tab4_c3">
+                                    <div class="my-tab">
+                                        <div class="tab-wrapper-4">
+                                            <!--tab section 4 2 1-->
+                                            <input type="radio" name="tab-radio-42" class="tab-radio-4" id="tab_radio_4_2_1" checked>
+                                            <label for="tab_radio_4_2_1" class="tab-handler-4">当前持仓</label>
+                                            <div class="tab-content-4">
+                                                <div class="row profit-overview">
+                                                    <div class="col-33">
+                                                        <p class="p-value text-number">+9534.76</p>
+                                                        <p class="p-name">当前持仓盈亏</p>
+                                                    </div>
+                                                    <div class="col-33">
+                                                        <p class="p-value text-number">205534.75</p>
+                                                        <p class="p-name">总市值</p>
+                                                    </div>
+                                                    <div class="col-33">
+                                                        <p class="p-value text-number">2564</p>
+                                                        <p class="p-name">可用余额</p>
+                                                    </div>
+                                                </div>
+                                                <p id="tab_421_title" class="p-value font-size-14 bold">（仓位98%）</p>
+                                                <div id="tab_421_table">
+                                                    <div class="row table-row table-head">
+                                                        <div class="table-cell">
+                                                            <p>股票/代码</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>成本</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>现价</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>持有</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>市值</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>建仓日期</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>持仓盈亏</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-nodata hide">
+                                                        <p>（未持有品种）</p>
+                                                    </div>
+                                                    <div id="tab_421_table_content" class="table-content">
+
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">100000</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>中信证券</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/sub_new_stock.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">100000</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-green">-936.76</p>
+                                                                <p class="text-number profit-green">-5.16%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>海天味业</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">100000</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+3534.76</p>
+                                                                <p class="text-number profit-red">+29.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>盘龙药业</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/new_stock.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">100000</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+3534.76</p>
+                                                                <p class="text-number profit-red">+29.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>海天味业</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">100000</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+3534.76</p>
+                                                                <p class="text-number profit-red">+29.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>海天味业</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">100000</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+3534.76</p>
+                                                                <p class="text-number profit-red">+29.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>海天味业</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">100000</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+3534.76</p>
+                                                                <p class="text-number profit-red">+29.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>海天味业</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">100000</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+3534.76</p>
+                                                                <p class="text-number profit-red">+29.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>海天味业</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">100000</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+3534.76</p>
+                                                                <p class="text-number profit-red">+29.86%</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--tab section 4 2 2-->
+                                            <input type="radio" name="tab-radio-42" class="tab-radio-4" id="tab_radio_4_2_2">
+                                            <label for="tab_radio_4_2_2" class="tab-handler-4">历史持仓</label>
+                                            <div class="tab-content-4">
+                                                <div class="row profit-overview">
+                                                    <div class="col-33">
+                                                        <p class="p-value text-number">24</p>
+                                                        <p class="p-name">交易笔数</p>
+                                                    </div>
+                                                    <div class="col-33">
+                                                        <p class="p-value text-number">57.14%</p>
+                                                        <p class="p-name">胜率</p>
+                                                    </div>
+                                                    <div class="col-33">
+                                                        <p class="p-value">
+                                                            <span class="text-number">122</span>天</p>
+                                                        <p class="p-name">平均持股周期</p>
+                                                    </div>
+                                                </div>
+                                                <p id="tab_422_title" class="p-value font-size-14 bold">近1年已平仓股票</p>
+                                                <div id="tab_422_table">
+                                                    <div class="row table-row table-head">
+                                                        <div class="table-cell">
+                                                            <p>股票/代码</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>买入成本</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>卖出均价</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>累积买入金额</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>建仓日期</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>平仓日期</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>盈亏</p>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab_422_table_content" class="table-content">
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170630</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170630</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-green">-353400.76</p>
+                                                                <p class="text-number profit-green">-290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170630</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170630</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170630</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170630</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170630</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170630</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170630</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>美的集团</p>
+                                                                <p class="stock-code">
+                                                                    <img src="../images/two_financial.png">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">39.46</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">51.10</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170630</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--tab section 4 2 3-->
+                                            <input type="radio" name="tab-radio-42" class="tab-radio-4" id="tab_radio_4_2_3">
+                                            <label for="tab_radio_4_2_3" class="tab-handler-4">基金持仓</label>
+                                            <div class="tab-content-4">
+                                                <div class="row profit-overview">
+                                                    <div class="col-50">
+                                                        <p class="p-value text-number">+9534.76</p>
+                                                        <p class="p-name">基金持仓盈亏</p>
+                                                    </div>
+                                                    <div class="col-50">
+                                                        <p class="p-value text-number">205534.75</p>
+                                                        <p class="p-name">基金市值</p>
+                                                    </div>
+                                                </div>
+                                                <p id="tab_423_title" class="p-value font-size-14 bold">（仓位98%）</p>
+                                                <div id="tab_423_table">
+                                                    <div class="row table-row table-head">
+                                                        <div class="table-cell">
+                                                            <p>基金/代码</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>持有市值</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>首次购买日期</p>
+                                                        </div>
+                                                        <div class="table-cell">
+                                                            <p>持仓盈亏</p>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab_423_table_content" class="table-content">
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>中邮混合成长</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-green">-353400.76</p>
+                                                                <p class="text-number profit-green">-290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>华夏信心稳健</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>博时标普500</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>中邮混合成长</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>中邮混合成长</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>中邮混合成长</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row table-row">
+                                                            <div class="table-cell">
+                                                                <p>中邮混合成长</p>
+                                                                <p class="stock-code">
+                                                                    <span>000336</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">123587.32</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number">20170530</p>
+                                                            </div>
+                                                            <div class="table-cell">
+                                                                <p class="text-number profit-red">+353400.76</p>
+                                                                <p class="text-number profit-red">+290.86%</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--tab section 5-->
-                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_5">
+                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_5" checked>
                     <label for="tab_radio_5" class="tab-handler">建议方案</label>
-                    <div class="tab-content">
-                        5
+                    <div id="tab5" class="tab-content">
+                        <div class="row">
+                            <div class="col-40">
+                                <div id="tab5_c1">
+                                    <div class="my-tab">
+                                        <div class="tab-wrapper">
+                                            <!--tab5 section 1 1-->
+                                            <input type="radio" name="tab-radio-5" class="tab-radio" id="tab_radio_5_1_1" checked>
+                                            <label for="tab_radio_5_1_1" class="tab-handler">收益率</label>
+                                            <div class="tab-content">
+                                                <div class="container-tab-button">
+                                                    <input type="radio" name="tab-radio-5111" class="tab-radio" id="tab_radio_5_1_1_1" checked>
+                                                    <label for="tab_radio_5_1_1_1">今年</label>
+                                                    <input type="radio" name="tab-radio-5111" class="tab-radio" id="tab_radio_5_1_1_2">
+                                                    <label for="tab_radio_5_1_1_2">历史</label>
+                                                </div>
+                                            </div>
+                                            <!--tab5 section 1 2-->
+                                            <input type="radio" name="tab-radio-5" class="tab-radio" id="tab_radio_5_1_2">
+                                            <label for="tab_radio_5_1_2" class="tab-handler">总资产</label>
+                                            <div class="tab-content">
+                                                <div class="container-tab-button">
+                                                    <input type="radio" name="tab-radio-5112" class="tab-radio" id="tab_radio_5_1_2_1" checked>
+                                                    <label for="tab_radio_5_1_2_1">今年</label>
+                                                    <input type="radio" name="tab-radio-5112" class="tab-radio" id="tab_radio_5_1_2_2">
+                                                    <label for="tab_radio_5_1_2_2">历史</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab5_c2">
+
+                                </div>
+                            </div>
+                            <div class="col-60">
+                                <div id="tab5_c3">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--tab section 6-->
-                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_6" checked>
+                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_6">
                     <label for="tab_radio_6" class="tab-handler">客户标签</label>
                     <div id="tab6" class="tab-content">
                         <div class="row">
@@ -668,7 +1559,7 @@
                                         <div class="dot"></div>
                                         <div>自定义</div>
                                     </div>
-                                    <div id="tab6_c2_nodata" class="font-size-14 hide" >
+                                    <div id="tab6_c2_nodata" class="font-size-14 hide">
                                         <p>（请为客户添加标签）</p>
                                     </div>
                                     <div id="model_container_label_custom">
@@ -1005,6 +1896,9 @@
             });
             $('#tab3_c1_content').slimscroll({
                 height: '463px;'
+            });
+            $('.table-content').slimscroll({
+                height: '390px;'
             });
             var btn_send_sms = document.getElementById('btn_send_sms');
             var mask1 = document.getElementById('mask1');

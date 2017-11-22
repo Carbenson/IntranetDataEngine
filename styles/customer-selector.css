@@ -150,6 +150,18 @@ div[id^='model_container_'] i {
     top: 20%;
 }
 
+.scroll-content {
+    overflow: hidden;
+}
+
+.profit-red {
+    color: #FD4261;
+}
+
+.profit-green {
+    color: #52AD4E;
+}
+
 
 /* ----- Tab页 start ----- */
 
@@ -215,10 +227,6 @@ div[id^='model_container_'] i {
     height: -webkit-calc(100vh - 370px);
     height: -moz-calc(100vh - 370px);
     height: calc(100vh - 370px);
-}
-
-.scroll-content {
-    overflow: hidden;
 }
 
 
@@ -517,8 +525,412 @@ div[id^='model_container_'] div[class^='model-'] {
 /* ----- Tab3 备注 end ----- */
 
 
-/* ----- Tab6 客户标签 start ----- */
+/* ----- Tab4 盈亏 start ----- */
 
+#tab4_c1 {
+    height: 365px;
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#tab4_c1 .my-tab {
+    margin-top: 0;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.tab-wrapper-4 {
+    position: relative;
+    width: 100%;
+    height: 44px;
+    border-bottom: 1px solid #C6CFD6;
+}
+
+.tab-wrapper-4 .tab-radio-4 {
+    display: none;
+}
+
+.tab-handler-4 {
+    position: relative;
+    z-index: 2;
+    display: block;
+    float: left;
+    height: 44px;
+    width: 88px;
+    text-align: center;
+    line-height: 44px;
+    color: #6E819B;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: 3px;
+    font-weight: 600;
+}
+
+.tab-radio-4:checked+.tab-handler-4 {
+    color: #2794E8;
+    background-color: transparent;
+    cursor: default;
+    box-sizing: border-box;
+    border-bottom: 3px solid #2794E8;
+    z-index: 4;
+}
+
+.tab-radio-4:checked+.tab-handler-4+.tab-content-4 {
+    visibility: visible;
+    opacity: 1;
+    z-index: 3;
+}
+
+.tab-wrapper-4 .tab-content-4 {
+    visibility: hidden;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    opacity: 0;
+    height: 320px;
+}
+
+#tab4_c1 {
+    height: 365px;
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#tab4_c1 .my-tab {
+    margin-top: 0;
+    border-radius: 4px;
+    background-color: transparent;
+}
+#tab4_c1 .tab-wrapper {
+    height: 44px;
+    border-bottom: 1px solid #C6CFD6;
+    background-color: transparent;
+}
+#tab4_c1 .tab-handler {
+    height: 44px;
+    width: 88px;
+    line-height: 44px;
+    background-color: transparent;   
+}
+#tab4_c1 .tab-radio:checked+.tab-handler {
+    box-sizing: border-box;
+    border-bottom: 3px solid #2794E8;
+    box-shadow: none;
+    z-index: 4;
+}
+
+#tab4_c1 .tab-radio:checked+.tab-handler+.tab-content {
+    box-shadow: none;
+}
+#tab4_c1 .tab-wrapper .tab-content {
+    top: 45px;
+    height: 320px;
+    background-color: transparent;    
+}
+.container-tab-button {
+    position: absolute;
+    margin-top: -37px;
+    margin-left: 320px;
+}
+
+.container-tab-button input {
+    display: none;
+}
+
+.container-tab-button label {
+    width: 54px;
+    height: 20px;
+    font-size: 12px;
+    color: #6E819B;
+    line-height: 18px;
+    background: #FFFFFF;
+    border: 1px solid #B3BBCF;
+    border-radius: 4px;
+    padding: 3px 14px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.container-tab-button .tab-radio:checked+label {
+    color: #FFFFFF;
+    background: #B3BBCF;
+    border-radius: 4px;
+    cursor: default;
+}
+#tab4_c2 {
+    height: 100px;
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#tab4_c2 .sub-content {
+    margin: 20px 10px;
+}
+
+#tab4_c2 .p-right {
+    margin-right: 20%;
+}
+
+#tab4_c2 .p-value {
+    margin-bottom: 10px;
+}
+
+#tab4_c3 {
+    height: 600px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#tab4_c3 .my-tab {
+    margin-top: 0;
+}
+
+#tab4_c3 .tab-wrapper-4 {
+    border-top: 1px solid #C6CFD6;
+    border-left: 1px solid #C6CFD6;
+    border-right: 1px solid #C6CFD6;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+#tab4_c3 .tab-wrapper-4 .tab-content-4 {
+    height: 500px;
+}
+
+#tab4_c3 .profit-overview {
+    width: 100%;
+    height: 95px;
+    border-bottom: 1px solid #C6CFD6;
+    border-left: 1px solid #C6CFD6;
+    border-right: 1px solid #C6CFD6;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-left: -1px;
+}
+
+#tab4_c3 .profit-overview .p-value {
+    text-align: center;
+    font-size: 22px;
+    line-height: 33px;
+    color: #FF841B;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+#tab4_c3 .profit-overview .p-name {
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.table-head {
+    color: #3A506D;
+    font-size: 12px;
+    line-height: 18px;
+    padding-bottom: 5px;
+}
+
+.table-content {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #1E2A38;
+}
+
+.table-content .table-cell p:first-child {
+    margin-top: 10px;
+}
+
+.table-cell p:nth-child(2) {
+    margin-bottom: 10px;
+}
+
+.table-cell .stock-code {
+    margin-top: -3px;
+    vertical-align: middle;
+    color: #6E819B;
+    font-family: HelveticaNeue;
+    font-weight: 500;
+}
+
+.table-cell .stock-code img {
+    vertical-align: middle
+}
+
+.table-cell .stock-code span {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.table-cell:first-child {
+    text-align: left;
+}
+.table-nodata {
+    color: #6E819B;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+#tab_421_title,
+#tab_422_title,
+#tab_423_title {
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.table-content {
+    height: 390px;
+}
+
+#tab4_c3 .table-row {
+    border-bottom: 1px solid #C6CFD6;
+    text-align: right;
+}
+
+#tab_421_table .table-row .table-cell:first-child {
+    width: 15%;
+}
+
+#tab_421_table .table-row .table-cell:nth-child(2) {
+    width: 10%;
+}
+
+#tab_421_table .table-row .table-cell:nth-child(3) {
+    width: 10%;
+}
+
+#tab_421_table .table-row .table-cell:nth-child(4) {
+    width: 15%;
+}
+
+#tab_421_table .table-row .table-cell:nth-child(5) {
+    width: 20%;
+}
+
+#tab_421_table .table-row .table-cell:nth-child(6) {
+    width: 15%;
+}
+
+#tab_421_table .table-row .table-cell:nth-child(7) {
+    width: 15%;
+}
+
+#tab_422_table .table-row .table-cell:first-child {
+    width: 15%;
+}
+
+#tab_422_table .table-row .table-cell:nth-child(2) {
+    width: 10%;
+}
+
+#tab_422_table .table-row .table-cell:nth-child(3) {
+    width: 10%;
+}
+
+#tab_422_table .table-row .table-cell:nth-child(4) {
+    width: 20%;
+}
+
+#tab_422_table .table-row .table-cell:nth-child(5) {
+    width: 15%;
+}
+
+#tab_422_table .table-row .table-cell:nth-child(6) {
+    width: 15%;
+}
+
+#tab_422_table .table-row .table-cell:nth-child(7) {
+    width: 15%;
+}
+
+
+#tab_423_table .table-row .table-cell:first-child {
+    width: 20%;
+}
+
+#tab_423_table .table-row .table-cell:nth-child(2) {
+    width: 20%;
+}
+
+#tab_423_table .table-row .table-cell:nth-child(3) {
+    width: 30%;
+}
+
+#tab_423_table .table-row .table-cell:nth-child(4) {
+    width: 30%;
+}
+/* ----- Tab4 盈亏 end ----- */
+
+
+
+
+/* ----- Tab5 建议方案 start ----- */
+
+#tab5_c1 {
+    height: 365px;
+    background: #FFFFFF;
+    border: 1px solid #C6CFD6;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#tab5_c1 .my-tab {
+    margin-top: 0;
+    border-radius: 4px;
+    background-color: transparent;
+}
+#tab5_c1 .tab-wrapper {
+    height: 44px;
+    border-bottom: 1px solid #C6CFD6;
+    background-color: transparent;
+}
+#tab5_c1 .tab-handler {
+    height: 44px;
+    width: 88px;
+    line-height: 44px;
+    background-color: transparent;   
+}
+#tab5_c1 .tab-radio:checked+.tab-handler {
+    box-sizing: border-box;
+    border-bottom: 3px solid #2794E8;
+    box-shadow: none;
+    z-index: 4;
+}
+
+#tab5_c1 .tab-radio:checked+.tab-handler+.tab-content {
+    box-shadow: none;
+}
+#tab5_c1 .tab-wrapper .tab-content {
+    top: 45px;
+    height: 320px;
+    background-color: transparent;    
+}
+/* ----- Tab5 建议方案 end ----- */
+
+
+
+
+
+
+/* ----- Tab6 客户标签 start ----- */
 
 #tab6 img {
     width: 24px;
@@ -538,6 +950,7 @@ div[id^='model_container_'] div[class^='model-'] {
 #model_container_label_system {
     margin: 0 20px;
 }
+
 #model_container_label_system .model-label {
     background: #D2EDFF;
     border-radius: 4px;
@@ -550,9 +963,11 @@ div[id^='model_container_'] div[class^='model-'] {
     width: 300px;
     z-index: 8;
 }
+
 #model_container_label_system .label-info:hover .hover-show {
     display: block;
 }
+
 #model_container_label_system .label-info .hover-show .triangle {
     margin-left: 280px;
 }
@@ -564,6 +979,7 @@ div[id^='model_container_'] div[class^='model-'] {
     height: 514px;
     margin: 20px 0;
 }
+
 #tab6_c2_nodata {
     margin: 20px;
     color: #808C9D;
@@ -572,19 +988,23 @@ div[id^='model_container_'] div[class^='model-'] {
 #model_container_label_custom {
     margin: 0 20px;
 }
+
 #model_container_label_custom .model-label {
     background: #FFEAD9;
     border-radius: 4px;
     border: none;
 }
+
 #model_container_label_custom .label-info .hover-show {
     margin-left: -285px;
     width: 340px;
     z-index: 8;
 }
+
 #model_container_label_custom .label-info:hover .hover-show {
     display: block;
 }
+
 #model_container_label_custom .label-info .hover-show .triangle {
     margin-left: 288px;
 }
@@ -595,9 +1015,11 @@ div[id^='model_container_'] div[class^='model-'] {
     height: 514px;
     margin: 20px 10px 20px 0;
 }
+
 #tab6_c3 .model-label {
     margin-left: 20px;
 }
+
 #tab6_c3 p {
     height: 30px;
     line-height: 30px;
@@ -610,17 +1032,22 @@ div[id^='model_container_'] div[class^='model-'] {
     text-align: right;
     margin-top: 15px;
 }
+
 #tab6_c3 .label-info .hover-show {
     margin-left: -300px;
     width: 350px;
     z-index: 8;
 }
+
 #tab6_c3 .label-info:hover .hover-show {
     display: block;
 }
+
 #tab6_c3 .label-info .hover-show .triangle {
     margin-left: 305px;
 }
+
+
 /* ----- Tab6 客户标签 end ----- */
 
 
@@ -836,28 +1263,35 @@ textarea:-ms-input-placeholder {
     margin-top: -184px;
     z-index: 8;
 }
+
 #modal_create_label_model .content {
     width: 520px;
     height: 327px;
     margin: 20px 40px;
 }
+
 #modal_create_label_model .title-line {
     margin-top: 20px;
 }
+
 #modal_create_label_model .title-line p {
-    margin-top: 5px; 
+    margin-top: 5px;
 }
+
 #textarea_label_model_title {
     width: 420px;
     height: 50px;
     margin-top: 0;
 }
+
 #modal_create_label_model .detail-line {
     margin-top: 15px;
 }
+
 #modal_create_label_model .detail-line p {
-    margin-top: 5px; 
+    margin-top: 5px;
 }
+
 #textarea_label_model_detail {
     width: 420px;
     height: 120px;
