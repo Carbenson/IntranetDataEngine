@@ -162,6 +162,10 @@ div[id^='model_container_'] i {
     color: #52AD4E;
 }
 
+.font-orange {
+    color: #FF841B;
+}
+
 
 /* ----- Tab页 start ----- */
 
@@ -502,7 +506,8 @@ div[id^='model_container_'] div[class^='model-'] {
 
 .model-remark:hover .hover-show {
     display: block;
-    width: 426px;
+    width: calc(45% - 115px);
+    z-index: 8;
 }
 
 #textarea_remark_content {
@@ -634,10 +639,22 @@ div[id^='model_container_'] div[class^='model-'] {
     height: 320px;
     background-color: transparent;    
 }
+
+#line_chart_tab411,
+#line_chart_tab412,
+#line_chart_tab511,
+#line_chart_tab512 {
+    height: calc(100% - 31px);
+    width: calc(100% - 10px);
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
 .container-tab-button {
     position: absolute;
     margin-top: -37px;
-    margin-left: 320px;
+    margin-right: 20px;
+    right: 0;
 }
 
 .container-tab-button input {
@@ -664,6 +681,44 @@ div[id^='model_container_'] div[class^='model-'] {
     border-radius: 4px;
     cursor: default;
 }
+
+.chart-container {
+    width: 100%;
+    height: calc(100% - 20px);
+}
+
+.chart-container .chart-title-line {
+    margin: 20px 20px 0 20px;
+}
+
+.chart-container .chart-title-line p {
+    height: 21px;
+}
+.chart-container .chart-legend {
+    float: right;
+    display: flex;
+}
+.chart-container .chart-legend .line-block-orange {
+    height: 4px;
+    width: 15px;
+    background-color: #FF841B;
+    margin-top: 8px;
+}
+.chart-container .chart-legend .line-block-blue {
+    height: 4px;
+    width: 15px;
+    background-color: #00A5FF;
+    margin-top: 8px;
+    margin-left: 20px;
+}
+.chart-container .chart-legend span {
+    font-size: 12px;
+    line-height: 21px;
+    color: #1E2A38;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
 #tab4_c2 {
     height: 100px;
     background: #FFFFFF;
@@ -686,7 +741,7 @@ div[id^='model_container_'] div[class^='model-'] {
 }
 
 #tab4_c3 {
-    height: 600px;
+    /* height: 600px; */
     background: #FFFFFF;
     border-radius: 4px;
     margin-top: 20px;
@@ -696,18 +751,39 @@ div[id^='model_container_'] div[class^='model-'] {
 
 #tab4_c3 .my-tab {
     margin-top: 0;
+    border-radius: 4px;
+    background-color: transparent;
 }
 
-#tab4_c3 .tab-wrapper-4 {
+#tab4_c3 .tab-wrapper {
     border-top: 1px solid #C6CFD6;
     border-left: 1px solid #C6CFD6;
     border-right: 1px solid #C6CFD6;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    height: 44px;
+    border-bottom: 1px solid #C6CFD6;
+    background-color: transparent;
 }
-
-#tab4_c3 .tab-wrapper-4 .tab-content-4 {
+#tab4_c3 .tab-handler {
+    height: 44px;
+    width: 88px;
+    line-height: 44px;
+    background-color: transparent;   
+}
+#tab4_c3 .tab-radio:checked+.tab-handler {
+    box-sizing: border-box;
+    border-bottom: 3px solid #2794E8;
+    box-shadow: none;
+    z-index: 4;
+}
+#tab4_c3 .tab-radio:checked+.tab-handler+.tab-content {
+    box-shadow: none;
+}
+#tab4_c3 .tab-wrapper .tab-content {
+    top: 45px;
     height: 500px;
+    background-color: transparent; 
 }
 
 #tab4_c3 .profit-overview {
@@ -797,13 +873,9 @@ div[id^='model_container_'] div[class^='model-'] {
 }
 
 .table-content {
-    height: 390px;
+    height: 350px;
 }
 
-#tab4_c3 .table-row {
-    border-bottom: 1px solid #C6CFD6;
-    text-align: right;
-}
 
 #tab_421_table .table-row .table-cell:first-child {
     width: 15%;
@@ -877,6 +949,7 @@ div[id^='model_container_'] div[class^='model-'] {
 #tab_423_table .table-row .table-cell:nth-child(4) {
     width: 30%;
 }
+
 /* ----- Tab4 盈亏 end ----- */
 
 
@@ -923,6 +996,82 @@ div[id^='model_container_'] div[class^='model-'] {
     height: 320px;
     background-color: transparent;    
 }
+
+#tab5_c2 {
+    text-align: center;
+}
+#tab5_c2>textarea {
+    margin-left: 20px;
+    margin-top: 17px;
+    width: calc(100% - 42px);
+    height: 80px;
+}
+#tab5_c2>button {
+    margin-top: 10px;
+    background-color: #00A5FF;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+#tab5_c3 {
+    height: 600px;
+    margin: 20px;
+}
+#tab5_c3_title {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+#tab5_c3_title button {
+    background-color: #00A5FF;
+    color: #FFFFFF;
+    font-size: 14px;
+    float: right;
+    margin-top: -5px;
+    width: 68px;
+}
+
+.table-row {
+    border-bottom: 1px solid #C6CFD6;
+    text-align: right;
+}
+#tab5_table .table-row .table-cell:first-child {
+    width: 20%;
+}
+
+#tab5_table .table-row .table-cell:nth-child(2) {
+    width: 15%;
+}
+
+#tab5_table .table-row .table-cell:nth-child(3) {
+    width: 10%;
+}
+
+#tab5_table .table-row .table-cell:nth-child(4) {
+    width: 15%;
+}
+
+#tab5_table .table-row .table-cell:nth-child(5) {
+    width: 10%;
+}
+
+#tab5_table .table-row .table-cell:nth-child(6) {
+    width: 20%;
+}
+
+#tab5_table .table-row .table-cell:nth-child(7) {
+    width: 10%;
+}
+#tab5_table .table-row .table-cell:nth-child(7) .btn-clear-position {
+    width: 28px;
+    color: #00A5FF;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 24px;
+    float: right;
+}
+#tab5_table_content {
+    height: 500px;
+}
 /* ----- Tab5 建议方案 end ----- */
 
 
@@ -959,8 +1108,8 @@ div[id^='model_container_'] div[class^='model-'] {
 }
 
 #model_container_label_system .label-info .hover-show {
-    margin-left: -280px;
-    width: 300px;
+    margin-left: calc(-33% + 115px);
+    width: calc(calc(100% - 300px) * 0.33);
     z-index: 8;
 }
 
@@ -969,7 +1118,7 @@ div[id^='model_container_'] div[class^='model-'] {
 }
 
 #model_container_label_system .label-info .hover-show .triangle {
-    margin-left: 280px;
+    margin-left: calc(100% - 35px);
 }
 
 #tab6_c2 {
@@ -996,8 +1145,8 @@ div[id^='model_container_'] div[class^='model-'] {
 }
 
 #model_container_label_custom .label-info .hover-show {
-    margin-left: -285px;
-    width: 340px;
+    margin-left: calc(-33% + 110px);
+    width: calc(calc(100% - 180px) * 0.33);
     z-index: 8;
 }
 
@@ -1006,14 +1155,14 @@ div[id^='model_container_'] div[class^='model-'] {
 }
 
 #model_container_label_custom .label-info .hover-show .triangle {
-    margin-left: 288px;
+    margin-left: calc(100% - 68px);
 }
 
 #tab6_c3 {
     background: #FFFFFF;
-    width: 390px;
+    width: calc(100% - 10px);
     height: 514px;
-    margin: 20px 10px 20px 0;
+    margin-top: 20px;
 }
 
 #tab6_c3 .model-label {
@@ -1034,8 +1183,10 @@ div[id^='model_container_'] div[class^='model-'] {
 }
 
 #tab6_c3 .label-info .hover-show {
-    margin-left: -300px;
-    width: 350px;
+    /* margin-left: -300px;
+    width: 350px; */
+    margin-left: calc(-33% + 98px);
+    width: calc(calc(100% - 140px) * 0.33);
     z-index: 8;
 }
 
@@ -1044,7 +1195,7 @@ div[id^='model_container_'] div[class^='model-'] {
 }
 
 #tab6_c3 .label-info .hover-show .triangle {
-    margin-left: 305px;
+    margin-left: calc(100% - 70px);
 }
 
 
@@ -1296,6 +1447,33 @@ textarea:-ms-input-placeholder {
     width: 420px;
     height: 120px;
     margin-top: 0;
+}
+
+#modal_open_position {
+    width: 400px;
+    height: auto;
+    margin-left: -200px;
+    margin-top: -128px;
+    z-index: 8;
+}
+
+#modal_open_position .content {
+    width: 360px;
+    height: auto;
+    margin: 20px;
+}
+#modal_open_position .content p:nth-child(3),
+#modal_open_position .content p:nth-child(4),
+#modal_open_position .content p:nth-child(5) {
+    margin-left: 15px;
+    margin-top: 20px;
+}
+#modal_open_position .content p:nth-child(5) input {
+    background: #FFFFFF;
+    border: 1px solid #B3BBCF;
+    border-radius: 4px;
+    width: 260px;
+    height: 30px;
 }
 
 #modal_alert1,

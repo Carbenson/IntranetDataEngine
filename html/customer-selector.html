@@ -9,16 +9,22 @@
 
     <meta content="金融矿工内网数据引擎" name="description" />
     <meta content="梁晓健" name="author" />
-    <link rel="stylesheet" type="text/css" href="../styles/plugins/simple-line-icons/simple-line-icons.min.css?t=1510724154"
-    />
-    <link rel="stylesheet" type="text/css" href="../styles/plugins/font-awesome/css/font-awesome.min.css?t=1510724154" />
 
-    <link rel="stylesheet" type="text/css" href="../styles/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css?t=1510724154"
+    <!-- plugins start -->
+    <!-- <link rel="stylesheet" type="text/css" href="../styles/plugins/simple-line-icons/simple-line-icons.min.css?t=1510724154"
+    /> -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/simple-line-icons/css/simple-line-icons.css?t=1510724154" />
+    <!-- <link rel="stylesheet" type="text/css" href="../styles/plugins/font-awesome/css/font-awesome.min.css?t=1510724154" /> -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min.css?t=1510724154" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="../styles/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css?t=1510724154"
+    /> -->
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css?t=1510724154"
     />
 
     <!-- <link rel="stylesheet" type="text/css" href="../styles/plugins/bootstrap/css/bootstrap.css?t=1510724154" /> -->
     <link rel="stylesheet" type="text/css" href="../styles/datepicker-dependency.css?t=1510724154" />
-
+    <!-- plugins end -->
 
     <link rel="stylesheet" type="text/css" href="../styles/base.css?t=1510724154" />
     <link rel="stylesheet" type="text/css" href="../styles/customer-selector.css?t=1510724154" />
@@ -46,12 +52,11 @@
         </div>
 
         <div class="main-content ">
-            <div class="clear-header "></div>
-            <div class="clear-10"></div>
+            <div class="clear-header"></div>
             <div class="row main-tool-bar">
                 <div class="col-50">
                     <button id="btn_back" class="btn btn-default bold" type="button">
-                        <i class="icon-arrow-left"></i>
+                        <i class="icon-arrow-left-circle"></i>
                         返回
                     </button>
                 </div>
@@ -105,7 +110,7 @@
             <div class="my-tab">
                 <div class="tab-wrapper">
                     <!--tab section 1-->
-                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_1">
+                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_1" checked>
                     <label for="tab_radio_1" class="tab-handler">业务关系</label>
                     <div id="tab1" class="tab-content">
                         <div class="row scroll-content">
@@ -588,7 +593,7 @@
                         </div>
                     </div>
                     <!--tab section 4-->
-                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_4">
+                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_4" >
                     <label for="tab_radio_4" class="tab-handler">盈亏</label>
                     <div id="tab4" class="tab-content">
                         <div class="row">
@@ -606,6 +611,25 @@
                                                     <input type="radio" name="tab-radio-4111" class="tab-radio" id="tab_radio_4_1_1_2">
                                                     <label for="tab_radio_4_1_1_2">历史</label>
                                                 </div>
+                                                <div class="chart-container">
+                                                    <div class="row chart-title-line">
+                                                        <div class="col-30">
+                                                            <p class="p-value font-size-14 bold">涨幅：
+                                                                <span id="chart_title_tab411" class="text-number profit-red">+18.76%</span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-70">
+                                                            <div class="chart-legend">
+                                                                <div class="line-block-orange"></div>
+                                                                <span>客户收益</span>
+                                                                <div class="line-block-blue"></div>
+                                                                <span>沪深300</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="line_chart_tab411"></div>
+                                                </div>
+                                                
                                             </div>
                                             <!--tab4 section 1 2-->
                                             <input type="radio" name="tab-radio-4" class="tab-radio" id="tab_radio_4_1_2">
@@ -616,6 +640,22 @@
                                                     <label for="tab_radio_4_1_2_1">今年</label>
                                                     <input type="radio" name="tab-radio-4112" class="tab-radio" id="tab_radio_4_1_2_2">
                                                     <label for="tab_radio_4_1_2_2">历史</label>
+                                                </div>
+                                                <div class="chart-container">
+                                                    <div class="row chart-title-line">
+                                                        <div class="col-30">
+                                                            <p class="p-value font-size-14 bold">总资产：
+                                                                <span id="chart_title_tab412" class="text-number font-orange">256587</span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-70">
+                                                            <div class="chart-legend">
+                                                                <div class="line-block-orange"></div>
+                                                                <span>总资产</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="line_chart_tab412"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -653,11 +693,11 @@
                             <div class="col-60">
                                 <div id="tab4_c3">
                                     <div class="my-tab">
-                                        <div class="tab-wrapper-4">
+                                        <div class="tab-wrapper">
                                             <!--tab section 4 2 1-->
-                                            <input type="radio" name="tab-radio-42" class="tab-radio-4" id="tab_radio_4_2_1" checked>
-                                            <label for="tab_radio_4_2_1" class="tab-handler-4">当前持仓</label>
-                                            <div class="tab-content-4">
+                                            <input type="radio" name="tab-radio-42" class="tab-radio" id="tab_radio_4_2_1" checked>
+                                            <label for="tab_radio_4_2_1" class="tab-handler">当前持仓</label>
+                                            <div class="tab-content">
                                                 <div class="row profit-overview">
                                                     <div class="col-33">
                                                         <p class="p-value text-number">+9534.76</p>
@@ -952,9 +992,9 @@
                                                 </div>
                                             </div>
                                             <!--tab section 4 2 2-->
-                                            <input type="radio" name="tab-radio-42" class="tab-radio-4" id="tab_radio_4_2_2">
-                                            <label for="tab_radio_4_2_2" class="tab-handler-4">历史持仓</label>
-                                            <div class="tab-content-4">
+                                            <input type="radio" name="tab-radio-42" class="tab-radio" id="tab_radio_4_2_2">
+                                            <label for="tab_radio_4_2_2" class="tab-handler">历史持仓</label>
+                                            <div class="tab-content">
                                                 <div class="row profit-overview">
                                                     <div class="col-33">
                                                         <p class="p-value text-number">24</p>
@@ -1280,9 +1320,9 @@
                                                 </div>
                                             </div>
                                             <!--tab section 4 2 3-->
-                                            <input type="radio" name="tab-radio-42" class="tab-radio-4" id="tab_radio_4_2_3">
-                                            <label for="tab_radio_4_2_3" class="tab-handler-4">基金持仓</label>
-                                            <div class="tab-content-4">
+                                            <input type="radio" name="tab-radio-42" class="tab-radio" id="tab_radio_4_2_3">
+                                            <label for="tab_radio_4_2_3" class="tab-handler">基金持仓</label>
+                                            <div class="tab-content">
                                                 <div class="row profit-overview">
                                                     <div class="col-50">
                                                         <p class="p-value text-number">+9534.76</p>
@@ -1446,7 +1486,7 @@
                         </div>
                     </div>
                     <!--tab section 5-->
-                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_5" checked>
+                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_5">
                     <label for="tab_radio_5" class="tab-handler">建议方案</label>
                     <div id="tab5" class="tab-content">
                         <div class="row">
@@ -1464,6 +1504,24 @@
                                                     <input type="radio" name="tab-radio-5111" class="tab-radio" id="tab_radio_5_1_1_2">
                                                     <label for="tab_radio_5_1_1_2">历史</label>
                                                 </div>
+                                                <div class="chart-container">
+                                                        <div class="row chart-title-line">
+                                                            <div class="col-30">
+                                                                <p class="p-value font-size-14 bold">涨幅：
+                                                                    <span id="chart_title_tab411" class="text-number profit-red">+18.76%</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-70">
+                                                                <div class="chart-legend">
+                                                                    <div class="line-block-orange"></div>
+                                                                    <span>客户收益</span>
+                                                                    <div class="line-block-blue"></div>
+                                                                    <span>沪深300</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="line_chart_tab511"></div>
+                                                    </div>
                                             </div>
                                             <!--tab5 section 1 2-->
                                             <input type="radio" name="tab-radio-5" class="tab-radio" id="tab_radio_5_1_2">
@@ -1475,17 +1533,322 @@
                                                     <input type="radio" name="tab-radio-5112" class="tab-radio" id="tab_radio_5_1_2_2">
                                                     <label for="tab_radio_5_1_2_2">历史</label>
                                                 </div>
+                                                <div class="chart-container">
+                                                        <div class="row chart-title-line">
+                                                            <div class="col-30">
+                                                                <p class="p-value font-size-14 bold">总资产：
+                                                                    <span id="chart_title_tab412" class="text-number font-orange">256587</span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="col-70">
+                                                                <div class="chart-legend">
+                                                                    <div class="line-block-orange"></div>
+                                                                    <span>总资产</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="line_chart_tab512"></div>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="tab5_c2">
-
+                                    <textarea id="textarea_tab5_remark" placeholder="请输入备注内容......"></textarea>
+                                    <button class="btn">上传备注</button>
                                 </div>
                             </div>
                             <div class="col-60">
                                 <div id="tab5_c3">
+                                    <p id="tab5_c3_title" class="p-value font-size-14 bold">
+                                        模拟配置方案：
+                                        <button id="btn_open_position" class="btn">建仓</button>
+                                    </p>
+                                    <div id="tab5_table">
+                                        <div class="row table-row table-head">
+                                            <div class="table-cell">
+                                                <p>品种</p>
+                                            </div>
+                                            <div class="table-cell">
+                                                <p>建仓时间</p>
+                                            </div>
+                                            <div class="table-cell">
+                                                <p>建仓价</p>
+                                            </div>
+                                            <div class="table-cell">
+                                                <p>平仓时间</p>
+                                            </div>
+                                            <div class="table-cell">
+                                                <p>平仓价</p>
+                                            </div>
+                                            <div class="table-cell">
+                                                <p>收益</p>
+                                            </div>
+                                            <div class="table-cell">
 
+                                            </div>
+                                        </div>
+                                        <div id="tab5_table_content" class="table-content">
+                                            <div class="row table-row">
+                                                <div class="table-cell">
+                                                    <p>美的集团</p>
+                                                    <p class="stock-code">
+                                                        <span>000336</span>
+                                                    </p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170530</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">12.00</p>
+                                                </div>
+                                                <div class="table-cell">
+
+                                                </div>
+                                                <div class="table-cell">
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number profit-red">+29.86%</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="btn-clear-position">平仓</p>
+                                                </div>
+                                            </div>
+                                            <div class="row table-row">
+                                                <div class="table-cell">
+                                                    <p>格力电器</p>
+                                                    <p class="stock-code">
+                                                        <span>000336</span>
+                                                    </p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170530</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">32.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170610</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">30.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number profit-green">-4.86%</p>
+                                                </div>
+                                                <div class="table-cell">
+
+                                                </div>
+                                            </div>
+                                            <div class="row table-row">
+                                                <div class="table-cell">
+                                                    <p>贵州茅台</p>
+                                                    <p class="stock-code">
+                                                        <span>000336</span>
+                                                    </p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170530</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">32.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170610</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">30.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number profit-red">+29.86%</p>
+                                                </div>
+                                                <div class="table-cell">
+
+                                                </div>
+                                            </div>
+                                            <div class="row table-row">
+                                                <div class="table-cell">
+                                                    <p>中邮核心竞争力</p>
+                                                    <p class="stock-code">
+                                                        <span>000336</span>
+                                                    </p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170530</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">12.00</p>
+                                                </div>
+                                                <div class="table-cell">
+
+                                                </div>
+                                                <div class="table-cell">
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number profit-red">+29.86%</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="btn-clear-position">平仓</p>
+                                                </div>
+                                            </div>
+                                            <div class="row table-row">
+                                                <div class="table-cell">
+                                                    <p>景顺长城核心</p>
+                                                    <p class="stock-code">
+                                                        <span>000336</span>
+                                                    </p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170530</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">32.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170610</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">30.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number profit-red">+29.86%</p>
+                                                </div>
+                                                <div class="table-cell">
+
+                                                </div>
+                                            </div>
+                                            <div class="row table-row">
+                                                <div class="table-cell">
+                                                    <p>景顺长城核心</p>
+                                                    <p class="stock-code">
+                                                        <span>000336</span>
+                                                    </p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170530</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">32.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170610</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">30.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number profit-red">+29.86%</p>
+                                                </div>
+                                                <div class="table-cell">
+
+                                                </div>
+                                            </div>
+                                            <div class="row table-row">
+                                                <div class="table-cell">
+                                                    <p>景顺长城核心</p>
+                                                    <p class="stock-code">
+                                                        <span>000336</span>
+                                                    </p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170530</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">32.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170610</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">30.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number profit-red">+29.86%</p>
+                                                </div>
+                                                <div class="table-cell">
+
+                                                </div>
+                                            </div>
+                                            <div class="row table-row">
+                                                <div class="table-cell">
+                                                    <p>景顺长城核心</p>
+                                                    <p class="stock-code">
+                                                        <span>000336</span>
+                                                    </p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170530</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">32.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170610</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">30.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number profit-red">+29.86%</p>
+                                                </div>
+                                                <div class="table-cell">
+
+                                                </div>
+                                            </div>
+                                            <div class="row table-row">
+                                                <div class="table-cell">
+                                                    <p>景顺长城核心</p>
+                                                    <p class="stock-code">
+                                                        <span>000336</span>
+                                                    </p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170530</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">32.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170610</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">30.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number profit-red">+29.86%</p>
+                                                </div>
+                                                <div class="table-cell">
+
+                                                </div>
+                                            </div>
+                                            <div class="row table-row">
+                                                <div class="table-cell">
+                                                    <p>景顺长城核心</p>
+                                                    <p class="stock-code">
+                                                        <span>000336</span>
+                                                    </p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170530</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">32.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">20170610</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number">30.66</p>
+                                                </div>
+                                                <div class="table-cell">
+                                                    <p class="text-number profit-red">+29.86%</p>
+                                                </div>
+                                                <div class="table-cell">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1857,6 +2220,28 @@
         </div>
     </div>
 
+    <div id="modal_open_position">
+        <div class="content">
+            <p class="p-header">记录推荐品种</p>
+            <div style="width:100%;border-bottom:1px solid #B3BBCF;margin-top:20px;"></div>
+            <p class="p-value font-size-14 bold">记录时间：
+                <span class="text-number">2017-10-17</span>
+            </p>
+            <p class="p-value font-size-14 bold">建仓价格：以收盘价建仓</p>
+            <p class="p-value font-size-14 bold">品种代码：
+                <input>
+            </p>
+            <div class="row modal-tool-bar">
+                <div class="col-50" style="text-align:right">
+                    <button id="btn_confirm_open_position" type="button" class="btn disabled" style="margin-right: 10px;">确定</button>
+                </div>
+                <div class="col-50">
+                    <button id="btn_cancel_open_position" type="button" class="btn" style="margin-left: 10px;">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="modal_alert1">
         <div class="content">
             <p class="p-header">短信模板已满</p>
@@ -1882,10 +2267,22 @@
     </div>
     <!-- 弹出层 end -->
 
-    <script src="../scripts/plugins/jquery-3.2.1.min.js?t=1510724154" type="text/javascript"></script>
-    <script src="../scripts/plugins/jquery-slimscroll/jquery.slimscroll.min.js?t=1510724154" type="text/javascript"></script>
 
-    <script src="../styles/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js?t=1510724154" type="text/javascript"></script>
+
+    <!-- plugins start -->
+    <!-- <script src="../scripts/plugins/jquery-3.2.1.min.js?t=1510724154" type="text/javascript"></script> -->
+    <script src="../node_modules/jquery/dist/jquery.min.js?t=1510724154" type="text/javascript"></script>
+    <!-- <script src="../scripts/plugins/jquery-slimscroll/jquery.slimscroll.min.js?t=1510724154" type="text/javascript"></script> -->
+    <script src="../node_modules/jquery-slimscroll/jquery.slimscroll.min.js?t=1510724154" type="text/javascript"></script>
+
+    <!-- <script src="../styles/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js?t=1510724154" type="text/javascript"></script> -->
+    <script src="../node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?t=1510724154" type="text/javascript"></script>
+    <!-- <script src="../scripts/plugins/highcharts-6.0.3/highcharts.js?t=1510724154" type="text/javascript"></script> -->
+    <script src="../node_modules/highcharts/highcharts.js?t=1510724154" type="text/javascript"></script>
+    <!-- plugins end -->
+
+
+    <script src="../scripts/drawHighCharts.js?t=1510724154" type="text/javascript"></script>
 
 
 
@@ -1898,7 +2295,10 @@
                 height: '463px;'
             });
             $('.table-content').slimscroll({
-                height: '390px;'
+                height: '350px;'
+            });
+            $('#tab5_table_content').slimscroll({
+                height: '500px;'
             });
             var btn_send_sms = document.getElementById('btn_send_sms');
             var mask1 = document.getElementById('mask1');
@@ -1980,7 +2380,18 @@
                 modal_create_label_model.style.display = 'none';
             }
 
+            var btn_open_position = document.getElementById('btn_open_position');
+            var modal_open_position = document.getElementById('modal_open_position');
+            btn_open_position.onclick = () => {
+                mask1.style.display = 'block';
+                modal_open_position.style.display = 'block';
+            }
 
+            var btn_cancel_open_position = document.getElementById('btn_cancel_open_position');
+            btn_cancel_open_position.onclick = () => {
+                mask1.style.display = 'none';
+                modal_open_position.style.display = 'none';
+            }
 
             $.fn.datepicker.dates['cn'] = {
                 days: ["周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日"],
