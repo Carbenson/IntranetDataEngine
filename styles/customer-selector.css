@@ -462,6 +462,25 @@ div[id^='model_container_'] i {
     border-radius: 4px;
 }
 
+#tab3_c1_content .record-1 {
+    margin-top: 0;
+}
+
+.remark-record {
+    margin-top: 20px;
+}
+
+.remark-record .remark-author {
+    width: 70px;
+    margin-left: 10px;
+    text-align: right;
+    float: left;
+}
+
+.remark-record .remark-content {
+    overflow: hidden;
+}
+
 #tab3_c2 {
     margin-top: 20px;
     margin-left: 40px;
@@ -608,22 +627,26 @@ div[id^='model_container_'] div[class^='model-'] {
     margin-top: 20px;
     margin-left: 20px;
 }
+
 #tab4_c1 .my-tab {
     margin-top: 0;
     border-radius: 4px;
     background-color: transparent;
 }
+
 #tab4_c1 .tab-wrapper {
     height: 44px;
     border-bottom: 1px solid #C6CFD6;
     background-color: transparent;
 }
+
 #tab4_c1 .tab-handler {
     height: 44px;
     width: 88px;
     line-height: 44px;
-    background-color: transparent;   
+    background-color: transparent;
 }
+
 #tab4_c1 .tab-radio:checked+.tab-handler {
     box-sizing: border-box;
     border-bottom: 3px solid #2794E8;
@@ -634,10 +657,11 @@ div[id^='model_container_'] div[class^='model-'] {
 #tab4_c1 .tab-radio:checked+.tab-handler+.tab-content {
     box-shadow: none;
 }
+
 #tab4_c1 .tab-wrapper .tab-content {
     top: 45px;
     height: 320px;
-    background-color: transparent;    
+    background-color: transparent;
 }
 
 #line_chart_tab411,
@@ -694,16 +718,19 @@ div[id^='model_container_'] div[class^='model-'] {
 .chart-container .chart-title-line p {
     height: 21px;
 }
+
 .chart-container .chart-legend {
     float: right;
     display: flex;
 }
+
 .chart-container .chart-legend .line-block-orange {
     height: 4px;
     width: 15px;
     background-color: #FF841B;
     margin-top: 8px;
 }
+
 .chart-container .chart-legend .line-block-blue {
     height: 4px;
     width: 15px;
@@ -711,6 +738,7 @@ div[id^='model_container_'] div[class^='model-'] {
     margin-top: 8px;
     margin-left: 20px;
 }
+
 .chart-container .chart-legend span {
     font-size: 12px;
     line-height: 21px;
@@ -765,25 +793,29 @@ div[id^='model_container_'] div[class^='model-'] {
     border-bottom: 1px solid #C6CFD6;
     background-color: transparent;
 }
+
 #tab4_c3 .tab-handler {
     height: 44px;
     width: 88px;
     line-height: 44px;
-    background-color: transparent;   
+    background-color: transparent;
 }
+
 #tab4_c3 .tab-radio:checked+.tab-handler {
     box-sizing: border-box;
     border-bottom: 3px solid #2794E8;
     box-shadow: none;
     z-index: 4;
 }
+
 #tab4_c3 .tab-radio:checked+.tab-handler+.tab-content {
     box-shadow: none;
 }
+
 #tab4_c3 .tab-wrapper .tab-content {
     top: 45px;
     height: 500px;
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 #tab4_c3 .profit-overview {
@@ -855,6 +887,7 @@ div[id^='model_container_'] div[class^='model-'] {
 .table-cell:first-child {
     text-align: left;
 }
+
 .table-nodata {
     color: #6E819B;
     font-weight: 600;
@@ -863,7 +896,6 @@ div[id^='model_container_'] div[class^='model-'] {
     text-align: center;
     margin-top: 40px;
 }
-
 
 #tab_421_title,
 #tab_422_title,
@@ -875,7 +907,6 @@ div[id^='model_container_'] div[class^='model-'] {
 .table-content {
     height: 350px;
 }
-
 
 #tab_421_table .table-row .table-cell:first-child {
     width: 15%;
@@ -933,7 +964,6 @@ div[id^='model_container_'] div[class^='model-'] {
     width: 15%;
 }
 
-
 #tab_423_table .table-row .table-cell:first-child {
     width: 20%;
 }
@@ -950,9 +980,8 @@ div[id^='model_container_'] div[class^='model-'] {
     width: 30%;
 }
 
+
 /* ----- Tab4 盈亏 end ----- */
-
-
 
 
 /* ----- Tab5 建议方案 start ----- */
@@ -965,22 +994,26 @@ div[id^='model_container_'] div[class^='model-'] {
     margin-top: 20px;
     margin-left: 20px;
 }
+
 #tab5_c1 .my-tab {
     margin-top: 0;
     border-radius: 4px;
     background-color: transparent;
 }
+
 #tab5_c1 .tab-wrapper {
     height: 44px;
     border-bottom: 1px solid #C6CFD6;
     background-color: transparent;
 }
+
 #tab5_c1 .tab-handler {
     height: 44px;
     width: 88px;
     line-height: 44px;
-    background-color: transparent;   
+    background-color: transparent;
 }
+
 #tab5_c1 .tab-radio:checked+.tab-handler {
     box-sizing: border-box;
     border-bottom: 3px solid #2794E8;
@@ -991,21 +1024,24 @@ div[id^='model_container_'] div[class^='model-'] {
 #tab5_c1 .tab-radio:checked+.tab-handler+.tab-content {
     box-shadow: none;
 }
+
 #tab5_c1 .tab-wrapper .tab-content {
     top: 45px;
     height: 320px;
-    background-color: transparent;    
+    background-color: transparent;
 }
 
 #tab5_c2 {
     text-align: center;
 }
+
 #tab5_c2>textarea {
     margin-left: 20px;
     margin-top: 17px;
     width: calc(100% - 42px);
     height: 80px;
 }
+
 #tab5_c2>button {
     margin-top: 10px;
     background-color: #00A5FF;
@@ -1017,10 +1053,12 @@ div[id^='model_container_'] div[class^='model-'] {
     height: 600px;
     margin: 20px;
 }
+
 #tab5_c3_title {
     margin-top: 5px;
     margin-bottom: 20px;
 }
+
 #tab5_c3_title button {
     background-color: #00A5FF;
     color: #FFFFFF;
@@ -1034,6 +1072,7 @@ div[id^='model_container_'] div[class^='model-'] {
     border-bottom: 1px solid #C6CFD6;
     text-align: right;
 }
+
 #tab5_table .table-row .table-cell:first-child {
     width: 20%;
 }
@@ -1061,6 +1100,7 @@ div[id^='model_container_'] div[class^='model-'] {
 #tab5_table .table-row .table-cell:nth-child(7) {
     width: 10%;
 }
+
 #tab5_table .table-row .table-cell:nth-child(7) .btn-clear-position {
     width: 28px;
     color: #00A5FF;
@@ -1069,14 +1109,13 @@ div[id^='model_container_'] div[class^='model-'] {
     line-height: 24px;
     float: right;
 }
+
 #tab5_table_content {
     height: 500px;
 }
+
+
 /* ----- Tab5 建议方案 end ----- */
-
-
-
-
 
 
 /* ----- Tab6 客户标签 start ----- */
@@ -1289,46 +1328,62 @@ textarea+.input-footer {
     margin: 20px 40px;
 }
 
-#modal_send_sms .sms-record {
+#modal_send_sms .p-header {
+    margin-bottom: 22px;
+}
+
+#sms_record {
     width: 620px;
     height: 265px;
     border: 1px solid #C6CFD6;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    margin-top: 22px;
 }
 
-textarea {
-    border: 1px solid #C6CFD6;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    margin-top: 20px;
+.record-1 {
+    margin: 10px 20px;
+}
+
+.record-1 p {
+    color: #6E819B;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+}
+
+.record-1 div {
+    display: inline-block;
+    color: #1E2A38;
+    font-size: 16px;
     line-height: 24px;
-    padding: 10px;
-    color: #3A506D;
-    font-family: STHeitiTC;
+    font-weight: 600;
+    background-color: #DBF1FF;
+    border-radius: 0px 8px 8px 8px;
+    padding: 10px 20px;
 }
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-    color: #B3BBCF;
+.record-2 {
+    margin: 10px 20px;
 }
 
-input:-moz-placeholder,
-textarea:-moz-placeholder {
-    color: #B3BBCF;
+.record-2 p {
+    color: #6E819B;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+    text-align: right;
 }
 
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-    color: #B3BBCF;
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-    color: #B3BBCF;
+.record-2 div {
+    display: inline-block;
+    color: #1E2A38;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    background-color: #DBF1FF;
+    border-radius: 8px 0px 8px 8px;
+    padding: 10px 20px;
 }
 
 #textarea_sms_content {
@@ -1462,12 +1517,14 @@ textarea:-ms-input-placeholder {
     height: auto;
     margin: 20px;
 }
+
 #modal_open_position .content p:nth-child(3),
 #modal_open_position .content p:nth-child(4),
 #modal_open_position .content p:nth-child(5) {
     margin-left: 15px;
     margin-top: 20px;
 }
+
 #modal_open_position .content p:nth-child(5) input {
     background: #FFFFFF;
     border: 1px solid #B3BBCF;
