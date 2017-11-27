@@ -5,13 +5,16 @@
 }
 
 @font-face {
-    font-family: "STHeitiTC";
-    src: url("../fonts/STHeitiSCLight.ttf") format('opentype');
+    /* font-family: "STHeitiTC"; */
+    /* src: url("../fonts/STHeitiSCLight.ttf") format('opentype'); */
+    font-family: "LanTingHei";
+    src: url("../fonts/lantinghei-cu.TTF") format('opentype');
 }
 
 @font-face {
     font-family: "HelveticaNeue";
-    src: url("../fonts/helveticaneue-light.otf") format('opentype');
+    /* src: url("../fonts/helveticaneue-light.otf") format('opentype'); */
+    src: url("../fonts/HelveticaNeue-Roman.ttf") format('opentype');    
 }
 
 html,
@@ -22,8 +25,8 @@ body {
 
 body {
     width: 100%;
-    font-family: STHeitiTC;
-    background: #F4F9FF 100%;
+    font-family: LanTingHei;
+    background: #EBEBEB 100%;
 }
 
 input {
@@ -39,7 +42,7 @@ textarea {
     line-height: 24px;
     padding: 10px;
     color: #3A506D;
-    font-family: STHeitiTC;
+    font-family: LanTingHei;
 }
 
 input::-webkit-input-placeholder,
@@ -74,13 +77,33 @@ textarea:-ms-input-placeholder {
     top: 0;
     font-size: 20px;
     color: white;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 .nav-header .logo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-left: 30px;
 }
@@ -90,25 +113,38 @@ textarea:-ms-input-placeholder {
 }
 
 .nav-header .head-menu {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-right: 30px;
 }
+
 .nav-header .head-menu ul {
     height: 70px;
 }
+
 .nav-header .head-menu ul:first-child {
     margin-right: 60px;
     text-align: center;
 }
+
 .nav-header .head-menu ul:last-child {
     margin-left: 60px;
     text-align: right;
 }
+
 .nav-header .head-menu ul:last-child li {
     min-width: 56px;
     padding: 0
 }
+
 .nav-header .head-menu li {
     float: left;
     list-style: none;
@@ -119,23 +155,35 @@ textarea:-ms-input-placeholder {
     display: block;
     cursor: default;
 }
+
 .nav-header .head-menu li a {
     height: 100%;
     width: 100%;
     color: #FFFFFF;
     display: block;
-    text-decoration:none;
+    text-decoration: none;
 }
-.nav-header .head-menu .active {
-    box-shadow: 0px -6px 0px 0px #2187D5 inset; 
+
+.nav-header .head-menu .active::after {
+    content: '';
+    height: 6px;
+    width: calc(100% + 20px);
+    margin-top: -6px;
+    margin-left: -10px;
+    display: block;
+    background-color: #2187D5;
 }
+
 .nav-header .head-menu .active a {
     color: #34AEFD;
 }
+
 .nav-header .search {
     height: 30px;
     width: 182px;
-    background:rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
     border-radius: 8px;
 }
 
@@ -146,6 +194,8 @@ textarea:-ms-input-placeholder {
     font-size: 12px;
     border: 0px;
     outline: 0!important;
+    -webkit-box-shadow: none!important;
+    -moz-box-shadow: none!important;
     box-shadow: none!important;
     color: #FFFFFF;
     font-family: inherit;
@@ -259,6 +309,7 @@ textarea:-ms-input-placeholder {
     font-weight: normal;
     text-align: center;
     vertical-align: middle;
+    -ms-touch-action: manipulation;
     touch-action: manipulation;
     cursor: pointer;
     background-image: none;
@@ -267,6 +318,8 @@ textarea:-ms-input-placeholder {
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -297,6 +350,7 @@ textarea:-ms-input-placeholder {
     outline: 0;
     background-image: none;
     -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
@@ -305,6 +359,7 @@ textarea:-ms-input-placeholder {
 fieldset[disabled] .btn {
     cursor: not-allowed;
     -webkit-box-shadow: none;
+    -moz-box-shadow: none;
     box-shadow: none;
     background-color: #D1D9DF;
 }
