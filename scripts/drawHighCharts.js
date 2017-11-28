@@ -1,10 +1,10 @@
 "use strict";
-var KeyValuePair = /** @class */ (function () {
+var KeyValuePair = (function () {
     function KeyValuePair() {
     }
     return KeyValuePair;
 }());
-var LineChartData = /** @class */ (function () {
+var LineChartData = (function () {
     function LineChartData() {
         this.listData = new Array();
     }

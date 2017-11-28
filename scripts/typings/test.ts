@@ -16,3 +16,5 @@ var user = new Student("王", "小明a ");
 
 // document.body.innerHTML = user.greeter();
 document.body.innerHTML = user.greeter();
+
+

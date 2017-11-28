@@ -528,7 +528,7 @@
                                     <div class="row" style="margin-bottom:20px;">
                                         <div class="col-40">
                                             <div class="search">
-                                                <input type="text" name="search" placeholder="请输入关键字">
+                                                <input id="btn_tab3_search" type="text" name="search" placeholder="请输入关键字">
                                                 <i class="icon-magnifier"></i>
                                             </div>
                                         </div>
@@ -2201,7 +2201,7 @@
 
 
     <!-- 弹出层 start -->
-    <div id="modal_send_sms">
+    <!-- <div id="modal_send_sms">
         <div class="content">
             <p class="p-header">发送短信</p>
             <div id="sms_record">
@@ -2300,9 +2300,9 @@
 
         </div>
 
-    </div>
+    </div> -->
 
-    <div id="modal_create_sms_model">
+    <!-- <div id="modal_create_sms_model">
         <div class="content">
             <p class="p-header">编辑短信模板</p>
             <textarea id="textarea_sms_model" class="font-size-16" placeholder="请输入短信模板内容......"></textarea>
@@ -2318,7 +2318,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div id="modal_create_remark_model">
         <div class="content">
@@ -2390,7 +2390,7 @@
         </div>
     </div>
 
-    <div id="modal_alert1">
+    <!-- <div id="modal_alert1">
         <div class="content">
             <p class="p-header">短信模板已满</p>
             <div class="modal-alert-info">短信模板最多允许编辑5条，如需增加，请删除不用的模板</div>
@@ -2400,7 +2400,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div id="modal_alert2">
         <div class="content">
@@ -2429,72 +2429,20 @@
     <script src="../node_modules/highcharts/highcharts.js?t=1510724162" type="text/javascript"></script>
     <!-- plugins end -->
 
-
+    
+    <!-- <script src="../scripts/drawHighCharts.min.js?t=1510724162" type="text/javascript"></script>
+    <script src="../scripts/myModal.min.js?t=1510724162" type="text/javascript"></script>
+    <script src="../scripts/customer-selector.min.js?t=1510724162" type="text/javascript"></script> -->
     <script src="../scripts/drawHighCharts.js?t=1510724162" type="text/javascript"></script>
-
+    <script src="../scripts/myModal.js?t=1510724162" type="text/javascript"></script>
+    <script src="../scripts/customer-selector.js?t=1510724162" type="text/javascript"></script>
+    
 
 
     <script>
         window.onload = () => {
-            $('.scroll-content').slimscroll({
-                height: 'auto'
-            });
-            $('#tab3_c1_content').slimscroll({
-                height: '380px;'
-            });
-            $('.table-content').slimscroll({
-                height: 'auto;'
-            });
-            $('#tab5_table_content').slimscroll({
-                height: '370px;'
-            });
-            $('#sms_record').slimscroll({
-                height: '215px;',
-                start: 'bottom'
-            });
-
-            var btn_send_sms = document.getElementById('btn_send_sms');
-            var mask1 = document.getElementById('mask1');
-            var modal_send_sms = document.getElementById('modal_send_sms');
-            btn_send_sms.onclick = () => {
-                mask1.style.display = 'block';
-                modal_send_sms.style.display = 'block';
-                var sms_record = document.getElementById('sms_record');
-                sms_record.children[sms_record.children.length - 1].scrollIntoView();
-            };
-
-            var btn_cancel_send_sms = document.getElementById('btn_cancel_send_sms');
-            btn_cancel_send_sms.onclick = () => {
-                mask1.style.display = 'none';
-                modal_send_sms.style.display = 'none';
-            }
-
-            var btn_create_sms_model = document.getElementById('btn_create_sms_model');
-            var mask2 = document.getElementById('mask2');
-            var modal_create_sms_model = document.getElementById('modal_create_sms_model');
-            var modal_alert1 = document.getElementById('modal_alert1');
-            btn_create_sms_model.onclick = () => {
-                var numSmsModel = 5;
-                if (numSmsModel < 5) {
-                    mask2.style.display = 'block';
-                    modal_create_sms_model.style.display = 'block';
-                } else {
-                    mask2.style.display = 'block';
-                    modal_alert1.style.display = 'block';
-                }
-            }
-
-            var btn_cancel_create_sms_model = document.getElementById('btn_cancel_create_sms_model');
-            btn_cancel_create_sms_model.onclick = () => {
-                mask2.style.display = 'none';
-                modal_create_sms_model.style.display = 'none';
-            }
-
-            var btn_dismiss_modal_alert1 = document.getElementById('btn_dismiss_modal_alert1');
-            btn_dismiss_modal_alert1.onclick = () => {
-                mask2.style.display = 'none';
-                modal_alert1.style.display = 'none';
-            }
+            
+            customer_selector.init();
 
             var btn_create_remark_model = document.getElementById('btn_create_remark_model');
             var modal_create_remark_model = document.getElementById('modal_create_remark_model');

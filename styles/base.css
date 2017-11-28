@@ -14,7 +14,7 @@
 @font-face {
     font-family: "HelveticaNeue";
     /* src: url("../fonts/helveticaneue-light.otf") format('opentype'); */
-    src: url("../fonts/HelveticaNeue-Roman.ttf") format('opentype');    
+    src: url("../fonts/HelveticaNeue-Roman.ttf") format('opentype');
 }
 
 html,
@@ -167,6 +167,8 @@ textarea:-ms-input-placeholder {
 .nav-header .head-menu .active::after {
     content: '';
     height: 6px;
+    width: -webkit-calc(100% + 20px);
+    width: -moz-calc(100% + 20px);
     width: calc(100% + 20px);
     margin-top: -6px;
     margin-left: -10px;

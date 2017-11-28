@@ -1,5 +1,5 @@
 "use strict";
-var Student = /** @class */ (function () {
+var Student = (function () {
     function Student(fiestName, lastName) {
         this.firstName = fiestName;
         this.lastName = lastName;
@@ -10,6 +10,5 @@ var Student = /** @class */ (function () {
     return Student;
 }());
 var user = new Student("王", "小明a ");
-// document.body.innerHTML = user.greeter();
 document.body.innerHTML = user.greeter();
 //# sourceMappingURL=test.js.map
