@@ -18,3 +18,16 @@ gulp.task('watch', function () {
             .pipe(gulp.dest('scripts'));
     });
 });
+
+gulp.task('minAll', function () {
+    gulp.src(['scripts/*.js', '!scripts/*.min.js'])
+        // 2. 压缩文件
+        .pipe(uglify({
+            mangle: true
+        }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        // 3. 另存压缩后的文件
+        .pipe(gulp.dest('scripts'));
+});
