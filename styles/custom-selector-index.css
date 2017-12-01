@@ -1,0 +1,266 @@
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: LanTingHei !important;
+}
+
+.HolyGrail {
+    display: flex;
+    height: 100vh; /*vh单位是屏幕高度*/
+    flex-direction: column;
+}
+
+.HolyGrail-body {
+
+    display: flex;
+    flex: 1; /*要和HolyGrail的height: 100vh一起用才能实现全屏*/
+}
+
+header {
+    padding-left: 30px;
+    padding-right: 30px;
+    background: #2D3C53;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 70px;
+    font-size: 20px;
+    color: white;
+
+}
+
+.header-btn {
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 70px;
+    font-size: 18px;
+    color: white;
+
+}
+
+.header-btn-selected {
+    margin-top: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 58px;
+    color: #2187d5;
+    border-bottom: solid #2187d5 6px;
+    display: inline-block
+}
+
+.HolyGrail-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: #ebebeb;
+}
+
+.title-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.20);
+    border-radius: 8px;
+}
+
+.title-search textarea {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    background: none;
+    border-radius: 8px 8px 0 0;
+    border: none;
+    outline: none;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    color: white;
+    resize: none;
+    rows: 1;
+    cols: 12;
+    margin-left: 10px;
+}
+
+.home-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.news-box {
+    flex: 0 0 8%;
+}
+
+/*简报*/
+.bulletin {
+    flex: 1;
+}
+
+.work-bill {
+    height: 108px;
+}
+
+.work-production {
+    height: 263px;
+    margin-bottom: 20px;
+}
+
+.news-box, .bulletin, .work-bill, .work-production,.bulletin-edit ,.news-box-edit{
+    width: auto;
+    margin-top: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.20);
+    border-radius: 4px;
+    padding: 18px;
+}
+
+.sub-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2794E8;
+    line-height: 24px;
+}
+
+.name-time {
+    float: right;
+}
+
+.normal-text {
+    margin-left: 16px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.bulletin-text {
+    max-height: 120px
+}
+
+.normal-text, .name-time {
+    font-size: 14px;
+    color: #6E819B;
+    line-height: 21px;
+
+}
+
+.index-item {
+    flex: 1;
+}
+
+.index-item > div:nth-child(1) {
+    font-size: 26px;
+    color: #FF841B;
+    line-height: 39px;
+    text-align: center
+}
+
+.index-item > div:nth-child(2) {
+    font-size: 18px;
+    color: #3A506D;
+    line-height: 27px;
+    text-align: center
+}
+
+.index-item > div:nth-child(3) {
+    font-size: 14px;
+    color: #6E819B;
+    line-height: 21px;
+    text-align: center;
+    font-family: HelveticaNeue;
+}
+
+.index-item > div > span:nth-child(1) {
+    font-family: HelveticaNeue;
+    font-weight: bold;
+}
+
+.work-production > hr {
+    width: 96%;
+    height: 2px;
+    background: #c6cfd6;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 1281px) {
+    .bulletin-text {
+        max-height: 170px;
+    }
+}
+
+/*中文字体*/
+@font-face {
+    font-family: 'HelveticaNeue';   /*字体名称*/
+    src: url(../fonts/HelveticaNeue-Roman.ttf);       /*字体源文件*/
+}
+
+/*数字字体*/
+@font-face {
+    font-family: 'LanTingHei';   /*字体名称*/
+    src: url(../fonts/lantinghei-cu.TTF);       /*字体源文件*/
+}
+
+.news-edit-text {
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 16px;
+    border: none;
+    outline: none;
+    resize: none;
+    width: 96%;
+    height: 150px;
+    background: #FFFFFF;
+    border: 1px solid #B3BBCF;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #3A506D;
+    line-height: 24px;
+}
+
+.positive-btn {
+    width: 68px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 30px;
+    background: #00A5FF;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+
+.nagetive-btn {
+    margin-left: 20px;
+    width: 68px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 30px;
+    background: #96989B;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+
+.positive-btn:active{
+    background: #008CD8;
+}
+.nagetive-btn:active{
+    background: #787B80;
+}
+.bulletin-edit{
+    flex: 0 0 45%;
+}
+.news-box-edit{
+    flex: 0 0 20%;
+}
+
+
+
