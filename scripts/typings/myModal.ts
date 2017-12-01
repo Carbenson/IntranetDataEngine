@@ -66,7 +66,7 @@ namespace MyModals {
         }
 
         /** 短信模板 */
-        class ModelSmsData {
+        export class ModelSmsData {
             /** 短信模板 */
             content: string;
             /** 模板id */
@@ -186,12 +186,8 @@ namespace MyModals {
             configData.textarea = document.getElementById('textarea_sms_content') as HTMLInputElement;
             configData.divContainerSmsModel = $('#model_container_sms')[0];
 
-            configData.initData.listRecord.forEach(record => {
-                addRecordHtml(record);
-            });
-            configData.initData.listModel.forEach(model => {
-                addModelHtml(model);
-            });
+            addRecordHtml(configData.initData.listRecord);
+            addModelHtml(configData.initData.listModel);
             modal_create_sms_model.init(configData.initData.listModel.length);
             let modal = new Modal('modal_send_sms', 'mask1');
             configData.modalNode = modal;
@@ -237,8 +233,9 @@ namespace MyModals {
 
         /** 短信记录滚动到最下面 */
         let scrollRecordToEnd = () => {
+            configData.divContainerSmsRecord.scrollHeight
             $(configData.divContainerSmsRecord).slimScroll({
-                scrollTo: '215px;'
+                scrollTo: configData.divContainerSmsRecord.scrollHeight + 'px'
             });
         }
 
@@ -254,48 +251,65 @@ namespace MyModals {
         }
 
         /** 创建短信记录的html
-         * @param  {RecordSmsData} record 短信记录数据
+         * @param  {RecordSmsData|Array<RecordSmsData>} record 短信记录数据
          * @returns string 单条短信记录的html
          */
-        let createRecordHtml = (record: RecordSmsData): string => {
-            let html = '';
-            if (record.recordType === 1) {
-                html = [
-                    '<div class="record-1">',
-                    '    <p>' + record.dateTime + '</p>',
-                    '    <div>' + record.record + '</div>',
-                    '</div>'
-                ].join('');
-            } else if (record.recordType === 2) {
-                html = [
-                    '<div class="record-2">',
-                    '    <p>' + record.dateTime + '</p>',
-                    '    <div>' + record.record + '</div>',
-                    '</div>'
-                ].join('');
+        let createRecordHtml = (record: RecordSmsData | Array < RecordSmsData > ): string => {
+            if (record instanceof RecordSmsData) {
+                let html = '';
+                if (record.recordType === 1) {
+                    html = [
+                        '<div class="record-1">',
+                        '    <p>' + record.dateTime + '</p>',
+                        '    <div>' + record.record + '</div>',
+                        '</div>'
+                    ].join('');
+                } else if (record.recordType === 2) {
+                    html = [
+                        '<div class="record-2">',
+                        '    <p>' + record.dateTime + '</p>',
+                        '    <div>' + record.record + '</div>',
+                        '</div>'
+                    ].join('');
+                }
+                return html;
+            } else {
+                let html = '';
+                record.forEach(r => {
+                    html += createRecordHtml(r);
+                });
+                return html;
             }
-            return html;
+
         };
 
-
         /** 创建短信模板的html
-         * @param  {ModelSmsData} model 短信模板数据
+         * @param  {ModelSmsData|Array<ModelSmsData>} model 短信模板数据
          * @returns string 单条短信模板的html
          */
-        let createModelHtml = (model: ModelSmsData): string => {
-            let html = [
-                '<div id="sms_model_' + model.id + '" class="row">',
-                '    <div class="model-sms">',
-                '        ' + model.content,
-                '        <div class="hover-show">',
-                '            <div class="triangle"></div>',
-                '            ' + model.content,
-                '        </div>',
-                '    </div>',
-                '    <i class="icon-close"></i>',
-                '</div>'
-            ].join('');
-            return html;
+        let createModelHtml = (model: ModelSmsData | Array < ModelSmsData > ): string => {
+            if (model instanceof ModelSmsData) {
+                let html = [
+                    '<div id="sms_model_' + model.id + '" class="row">',
+                    '    <div class="model-sms">',
+                    '        ' + model.content,
+                    '        <div class="hover-show">',
+                    '            <div class="triangle"></div>',
+                    '            ' + model.content,
+                    '        </div>',
+                    '    </div>',
+                    '    <i class="icon-close"></i>',
+                    '</div>'
+                ].join('');
+                return html;
+            } else {
+                let html = '';
+                model.forEach(m => {
+                    html += createModelHtml(m);
+                });
+                return html;
+            }
+
         };
 
         /** 创建整个modal的html */
@@ -330,19 +344,32 @@ namespace MyModals {
         };
 
         /** 添加短信记录的html
-         * @param  {RecordSmsData} record 短信记录数据
+         * @param  {RecordSmsData|Array<RecordSmsData>} record 短信记录数据
          */
-        export let addRecordHtml = (record: RecordSmsData) => {
+        export let addRecordHtml = (record: RecordSmsData | Array < RecordSmsData > ) => {
             let html = createRecordHtml(record);
             configData.divContainerSmsRecord.insertAdjacentHTML('beforeend', html);
         }
 
         /** 添加短信模板的html
-         * @param  {ModelSmsData} model 短信模板数据
+         * @param  {ModelSmsData|Array<ModelSmsData>} model 短信模板数据
          */
-        export let addModelHtml = (model: ModelSmsData) => {
+        export let addModelHtml = (model: ModelSmsData | Array < ModelSmsData > ) => {
             let html = createModelHtml(model);
             configData.divContainerSmsModel.insertAdjacentHTML('beforeend', html);
+            if (model instanceof ModelSmsData) {
+                bindModelEvent(model);
+            } else {
+                model.forEach(m => {
+                    bindModelEvent(m);
+                });
+            }
+        }
+
+        /** 为短信模板绑定事件
+         * @param  {ModelSmsData} model 短信模板数据
+         */
+        let bindModelEvent = (model: ModelSmsData) => {
             let rowModel = $(configData.divContainerSmsModel).find('#sms_model_' + model.id)[0];
             let modelContent = $(rowModel).find('.model-sms');
             modelContent.data('data', model);
@@ -419,8 +446,6 @@ namespace MyModals {
             //     dataType: 'json',
             //     contentType: 'application/json; charset=utf-8',
             //     success: function (rsp) {
-            //         AddRecordHtml(record);
-            //         scrollRecordToEnd();
             //     },
             //     error: function (xmlHttpRequest, textStatus, errorThrown) {
             //         console.info(xmlHttpRequest.status);
@@ -598,9 +623,6 @@ namespace MyModals {
             //     dataType: 'json',
             //     contentType: 'application/json; charset=utf-8',
             //     success: function (rsp) {
-            //         configData.listExistModel.push(model);
-            //         modal_send_sms.AddModelHtml(model);
-            //         configData.modalNode.hide();
             //     },
             //     error: function (xmlHttpRequest, textStatus, errorThrown) {
             //         console.info(xmlHttpRequest.status);
@@ -611,10 +633,9 @@ namespace MyModals {
             // });
 
             configData.existModelCount = configData.existModelCount + 1;
-            let modelData = {
-                content: model,
-                id: new Date().getTime()
-            };
+            let modelData = new modal_send_sms.ModelSmsData();
+            modelData.id = new Date().getTime();
+            modelData.content = model;
             modal_send_sms.addModelData(modelData);
             modal_send_sms.addModelHtml(modelData);
             configData.modalNode.hide();
@@ -623,13 +644,10 @@ namespace MyModals {
 
     /** 创建备注模板的弹出层 */
     export namespace modal_create_remark_model {
+        /** 配置数据 */
         let configData = {
-            /** 弹出层的html */
-            htmlModal: '',
             /** 弹出层的元素节点 */
             modalNode: new Modal('', ''),
-            /** 弹出提示层的html */
-            htmlModalAlert: '',
             /** 弹出提示出的元素节点 */
             modalAlertNode: new Modal('', ''),
             /** 创建备注模板的输入框 */
@@ -667,14 +685,14 @@ namespace MyModals {
 
         /** 添加modal的html节点 */
         let addModalNode = () => {
-            createModalHtml();
-            document.body.insertAdjacentHTML('beforeend', configData.htmlModal);
+            let htmlModal = createModalHtml();
+            document.body.insertAdjacentHTML('beforeend', htmlModal);
             let modal = new Modal('modal_create_remark_model', 'mask1');
             configData.modalNode = modal;
             configData.textarea = document.getElementById('textarea_remark_model') as HTMLInputElement;
 
-            createModalAlert();
-            document.body.insertAdjacentHTML('beforeend', configData.htmlModalAlert);
+            let htmlAlert = createModalAlertHtml();
+            document.body.insertAdjacentHTML('beforeend', htmlAlert);
             let alert = new Modal('modal_alert2', 'mask1');
             configData.modalAlertNode = alert;
         };
@@ -710,7 +728,7 @@ namespace MyModals {
         }
 
         /** 创建弹出层的html */
-        let createModalHtml = () => {
+        let createModalHtml = (): string => {
             let html = [
                 '<div id="modal_create_remark_model">',
                 '    <div class="content">',
@@ -730,11 +748,11 @@ namespace MyModals {
                 '    </div>',
                 '</div>'
             ].join('');
-            configData.htmlModal = html;
+            return html;
         }
 
         /** 创建弹出层提示的html */
-        let createModalAlert = () => {
+        let createModalAlertHtml = (): string => {
             let html = [
                 '<div id="modal_alert2">',
                 '    <div class="content">',
@@ -748,7 +766,7 @@ namespace MyModals {
                 '    </div>',
                 '</div>'
             ].join('');
-            configData.htmlModalAlert = html;
+            return html;
         }
 
         /** 检查字数 */
@@ -775,9 +793,6 @@ namespace MyModals {
             //     dataType: 'json',
             //     contentType: 'application/json; charset=utf-8',
             //     success: function (rsp) {
-            //         configData.listExistModel.push(model);
-            //         modal_send_sms.AddModelHtml(model);
-            //         configData.modalNode.hide();
             //     },
             //     error: function (xmlHttpRequest, textStatus, errorThrown) {
             //         console.info(xmlHttpRequest.status);
@@ -788,13 +803,83 @@ namespace MyModals {
             // });
 
             configData.existModelCount = configData.existModelCount + 1;
-            let modelData = {
-                id: new Date().getTime(),
-                remark: model
-            };
+            let modelData = new customer_selector.TabRemark.ModelRemarkData();
+            modelData.id = new Date().getTime();
+            modelData.remark = model;
             customer_selector.TabRemark.addModelData(modelData);
             customer_selector.TabRemark.addModelHtml(modelData);
             configData.modalNode.hide();
+        }
+    }
+
+    /** 创建模拟配置方案记录的弹出层 */
+    export namespace modal_create_suggest_record {
+        /** 配置数据 */
+        let configData = {
+            /** 弹出层的元素节点 */
+            modalNode: new Modal('', ''),
+            /** 创建模拟配置方案记录的输入框 */
+            inputStockCode: document.getElementById('input_suggest_stockcode') as HTMLInputElement,
+        }
+
+        /** 初始化 */
+        export let init = () => {
+            removeModalNode();
+            addModalNode();
+            bindEvent();
+        }
+
+        /** 删除modal的html节点 */
+        let removeModalNode = () => {
+            configData.modalNode.removeSelf();
+        };
+
+
+        /** 添加modal的html节点 */
+        let addModalNode = () => {
+            let htmlModal = createModalHtml();
+            document.body.insertAdjacentHTML('beforeend', htmlModal);
+            let modal = new Modal('modal_create_suggest_record', 'mask1');
+            configData.modalNode = modal;
+            configData.inputStockCode = document.getElementById('input_suggest_stockcode') as HTMLInputElement;
+
+        };
+
+        /** 事件绑定 */
+        let bindEvent = () => {
+            let btnCreateRemarkModel = $('#btn_create_suggest_record');
+            btnCreateRemarkModel.on('click', () => {
+                configData.modalNode.show();
+            })
+
+        }
+
+        /** 创建弹出层的html */
+        let createModalHtml = (): string => {
+            let html = [
+                '<div id="modal_create_suggest_record">',
+                '    <div class="content">',
+                '        <p class="p-header">记录推荐品种</p>',
+                '        <div style="width:100%;border-bottom:1px solid #B3BBCF;margin-top:20px;"></div>',
+                '        <p class="p-value font-size-14">记录时间：',
+                '            <span class="text-number">2017-10-17</span>',
+                '        </p>',
+                '        <p class="p-value font-size-14">建仓价格：以收盘价建仓</p>',
+                '        <p class="p-value font-size-14">品种代码：',
+                '            <input id="input_suggest_stockcode" >',
+                '        </p>',
+                '        <div class="row modal-tool-bar">',
+                '            <div class="col-50" style="text-align:right">',
+                '                <button id="btn_confirm_open_position" type="button" class="btn disabled" style="margin-right: 10px;">确定</button>',
+                '            </div>',
+                '            <div class="col-50">',
+                '                <button id="btn_cancel_open_position" type="button" class="btn close-modal" style="margin-left: 10px;">取消</button>',
+                '            </div>',
+                '        </div>',
+                '    </div>',
+                '</div>'
+            ].join("");
+            return html;
         }
     }
 }

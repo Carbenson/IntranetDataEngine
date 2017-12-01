@@ -55,6 +55,7 @@ var MyModals;
             }
             return ModelSmsData;
         }());
+        modal_send_sms.ModelSmsData = ModelSmsData;
         var ModalSendSmsData = (function () {
             function ModalSendSmsData() {
                 this.listRecord = [];
@@ -120,12 +121,8 @@ var MyModals;
             });
             configData.textarea = document.getElementById('textarea_sms_content');
             configData.divContainerSmsModel = $('#model_container_sms')[0];
-            configData.initData.listRecord.forEach(function (record) {
-                modal_send_sms.addRecordHtml(record);
-            });
-            configData.initData.listModel.forEach(function (model) {
-                modal_send_sms.addModelHtml(model);
-            });
+            modal_send_sms.addRecordHtml(configData.initData.listRecord);
+            modal_send_sms.addModelHtml(configData.initData.listModel);
             modal_create_sms_model.init(configData.initData.listModel.length);
             var modal = new Modal('modal_send_sms', 'mask1');
             configData.modalNode = modal;
@@ -163,8 +160,9 @@ var MyModals;
             };
         };
         var scrollRecordToEnd = function () {
+            configData.divContainerSmsRecord.scrollHeight;
             $(configData.divContainerSmsRecord).slimScroll({
-                scrollTo: '215px;'
+                scrollTo: configData.divContainerSmsRecord.scrollHeight + 'px'
             });
         };
         var checkWordCount = function () {
@@ -178,39 +176,57 @@ var MyModals;
             configData.spanLeftWordCount.innerText = (63 - value.length).toString();
         };
         var createRecordHtml = function (record) {
-            var html = '';
-            if (record.recordType === 1) {
-                html = [
-                    '<div class="record-1">',
-                    '    <p>' + record.dateTime + '</p>',
-                    '    <div>' + record.record + '</div>',
-                    '</div>'
-                ].join('');
+            if (record instanceof RecordSmsData) {
+                var html = '';
+                if (record.recordType === 1) {
+                    html = [
+                        '<div class="record-1">',
+                        '    <p>' + record.dateTime + '</p>',
+                        '    <div>' + record.record + '</div>',
+                        '</div>'
+                    ].join('');
+                }
+                else if (record.recordType === 2) {
+                    html = [
+                        '<div class="record-2">',
+                        '    <p>' + record.dateTime + '</p>',
+                        '    <div>' + record.record + '</div>',
+                        '</div>'
+                    ].join('');
+                }
+                return html;
             }
-            else if (record.recordType === 2) {
-                html = [
-                    '<div class="record-2">',
-                    '    <p>' + record.dateTime + '</p>',
-                    '    <div>' + record.record + '</div>',
-                    '</div>'
-                ].join('');
+            else {
+                var html_1 = '';
+                record.forEach(function (r) {
+                    html_1 += createRecordHtml(r);
+                });
+                return html_1;
             }
-            return html;
         };
         var createModelHtml = function (model) {
-            var html = [
-                '<div id="sms_model_' + model.id + '" class="row">',
-                '    <div class="model-sms">',
-                '        ' + model.content,
-                '        <div class="hover-show">',
-                '            <div class="triangle"></div>',
-                '            ' + model.content,
-                '        </div>',
-                '    </div>',
-                '    <i class="icon-close"></i>',
-                '</div>'
-            ].join('');
-            return html;
+            if (model instanceof ModelSmsData) {
+                var html = [
+                    '<div id="sms_model_' + model.id + '" class="row">',
+                    '    <div class="model-sms">',
+                    '        ' + model.content,
+                    '        <div class="hover-show">',
+                    '            <div class="triangle"></div>',
+                    '            ' + model.content,
+                    '        </div>',
+                    '    </div>',
+                    '    <i class="icon-close"></i>',
+                    '</div>'
+                ].join('');
+                return html;
+            }
+            else {
+                var html_2 = '';
+                model.forEach(function (m) {
+                    html_2 += createModelHtml(m);
+                });
+                return html_2;
+            }
         };
         var createModalHtml = function () {
             var html = [
@@ -248,6 +264,16 @@ var MyModals;
         modal_send_sms.addModelHtml = function (model) {
             var html = createModelHtml(model);
             configData.divContainerSmsModel.insertAdjacentHTML('beforeend', html);
+            if (model instanceof ModelSmsData) {
+                bindModelEvent(model);
+            }
+            else {
+                model.forEach(function (m) {
+                    bindModelEvent(m);
+                });
+            }
+        };
+        var bindModelEvent = function (model) {
             var rowModel = $(configData.divContainerSmsModel).find('#sms_model_' + model.id)[0];
             var modelContent = $(rowModel).find('.model-sms');
             modelContent.data('data', model);
@@ -393,10 +419,9 @@ var MyModals;
         };
         var postSaveModel = function (model) {
             configData.existModelCount = configData.existModelCount + 1;
-            var modelData = {
-                content: model,
-                id: new Date().getTime()
-            };
+            var modelData = new modal_send_sms.ModelSmsData();
+            modelData.id = new Date().getTime();
+            modelData.content = model;
             modal_send_sms.addModelData(modelData);
             modal_send_sms.addModelHtml(modelData);
             configData.modalNode.hide();
@@ -405,9 +430,7 @@ var MyModals;
     var modal_create_remark_model;
     (function (modal_create_remark_model) {
         var configData = {
-            htmlModal: '',
             modalNode: new Modal('', ''),
-            htmlModalAlert: '',
             modalAlertNode: new Modal('', ''),
             textarea: document.getElementById('textarea_sms_model'),
             btnSaveCreateRemarkModel: $('#btn_save_create_remark_model'),
@@ -428,13 +451,13 @@ var MyModals;
             configData.modalAlertNode.removeSelf();
         };
         var addModalNode = function () {
-            createModalHtml();
-            document.body.insertAdjacentHTML('beforeend', configData.htmlModal);
+            var htmlModal = createModalHtml();
+            document.body.insertAdjacentHTML('beforeend', htmlModal);
             var modal = new Modal('modal_create_remark_model', 'mask1');
             configData.modalNode = modal;
             configData.textarea = document.getElementById('textarea_remark_model');
-            createModalAlert();
-            document.body.insertAdjacentHTML('beforeend', configData.htmlModalAlert);
+            var htmlAlert = createModalAlertHtml();
+            document.body.insertAdjacentHTML('beforeend', htmlAlert);
             var alert = new Modal('modal_alert2', 'mask1');
             configData.modalAlertNode = alert;
         };
@@ -485,9 +508,9 @@ var MyModals;
                 '    </div>',
                 '</div>'
             ].join('');
-            configData.htmlModal = html;
+            return html;
         };
-        var createModalAlert = function () {
+        var createModalAlertHtml = function () {
             var html = [
                 '<div id="modal_alert2">',
                 '    <div class="content">',
@@ -501,7 +524,7 @@ var MyModals;
                 '    </div>',
                 '</div>'
             ].join('');
-            configData.htmlModalAlert = html;
+            return html;
         };
         var checkWordCount = function () {
             var value = configData.textarea.value.trim();
@@ -515,14 +538,67 @@ var MyModals;
         };
         var postSaveModel = function (model) {
             configData.existModelCount = configData.existModelCount + 1;
-            var modelData = {
-                id: new Date().getTime(),
-                remark: model
-            };
+            var modelData = new customer_selector.TabRemark.ModelRemarkData();
+            modelData.id = new Date().getTime();
+            modelData.remark = model;
             customer_selector.TabRemark.addModelData(modelData);
             customer_selector.TabRemark.addModelHtml(modelData);
             configData.modalNode.hide();
         };
     })(modal_create_remark_model = MyModals.modal_create_remark_model || (MyModals.modal_create_remark_model = {}));
+    var modal_create_suggest_record;
+    (function (modal_create_suggest_record) {
+        var configData = {
+            modalNode: new Modal('', ''),
+            inputStockCode: document.getElementById('input_suggest_stockcode'),
+        };
+        modal_create_suggest_record.init = function () {
+            removeModalNode();
+            addModalNode();
+            bindEvent();
+        };
+        var removeModalNode = function () {
+            configData.modalNode.removeSelf();
+        };
+        var addModalNode = function () {
+            var htmlModal = createModalHtml();
+            document.body.insertAdjacentHTML('beforeend', htmlModal);
+            var modal = new Modal('modal_create_suggest_record', 'mask1');
+            configData.modalNode = modal;
+            configData.inputStockCode = document.getElementById('input_suggest_stockcode');
+        };
+        var bindEvent = function () {
+            var btnCreateRemarkModel = $('#btn_create_suggest_record');
+            btnCreateRemarkModel.on('click', function () {
+                configData.modalNode.show();
+            });
+        };
+        var createModalHtml = function () {
+            var html = [
+                '<div id="modal_create_suggest_record">',
+                '    <div class="content">',
+                '        <p class="p-header">记录推荐品种</p>',
+                '        <div style="width:100%;border-bottom:1px solid #B3BBCF;margin-top:20px;"></div>',
+                '        <p class="p-value font-size-14">记录时间：',
+                '            <span class="text-number">2017-10-17</span>',
+                '        </p>',
+                '        <p class="p-value font-size-14">建仓价格：以收盘价建仓</p>',
+                '        <p class="p-value font-size-14">品种代码：',
+                '            <input id="input_suggest_stockcode" >',
+                '        </p>',
+                '        <div class="row modal-tool-bar">',
+                '            <div class="col-50" style="text-align:right">',
+                '                <button id="btn_confirm_open_position" type="button" class="btn disabled" style="margin-right: 10px;">确定</button>',
+                '            </div>',
+                '            <div class="col-50">',
+                '                <button id="btn_cancel_open_position" type="button" class="btn close-modal" style="margin-left: 10px;">取消</button>',
+                '            </div>',
+                '        </div>',
+                '    </div>',
+                '</div>'
+            ].join("");
+            return html;
+        };
+    })(modal_create_suggest_record = MyModals.modal_create_suggest_record || (MyModals.modal_create_suggest_record = {}));
 })(MyModals || (MyModals = {}));
 //# sourceMappingURL=myModal.js.map

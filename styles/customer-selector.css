@@ -1127,11 +1127,11 @@ div[id^="model_container_"] div[class^="model-"] {
     color: #00a5ff;
     cursor: pointer;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 30px;
     float: right;
 }
 
-#tab5_table_content {
+#suggest_record {
     height: 370px;
     /* height: 100%; */
 }
@@ -1584,7 +1584,7 @@ textarea+.input-footer {
     margin-top: 0;
 }
 
-#modal_open_position {
+#modal_create_suggest_record {
     width: 400px;
     height: auto;
     margin-left: -200px;
@@ -1592,20 +1592,20 @@ textarea+.input-footer {
     z-index: 8;
 }
 
-#modal_open_position .content {
+#modal_create_suggest_record .content {
     width: 360px;
     height: auto;
     margin: 20px;
 }
 
-#modal_open_position .content p:nth-child(3),
-#modal_open_position .content p:nth-child(4),
-#modal_open_position .content p:nth-child(5) {
+#modal_create_suggest_record .content p:nth-child(3),
+#modal_create_suggest_record .content p:nth-child(4),
+#modal_create_suggest_record .content p:nth-child(5) {
     margin-left: 15px;
     margin-top: 20px;
 }
 
-#modal_open_position .content p:nth-child(5) input {
+#modal_create_suggest_record .content p:nth-child(5) input {
     background: #ffffff;
     border: 1px solid #b3bbcf;
     -webkit-border-radius: 4px;

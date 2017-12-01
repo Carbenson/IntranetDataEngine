@@ -519,7 +519,7 @@
                         </div>
                     </div>
                     <!--tab section 3-->
-                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_3" checked>
+                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_3">
                     <label for="tab_radio_3" class="tab-handler">备注</label>
                     <div id="tab3" class="tab-content">
                         <div class="row">
@@ -1473,7 +1473,7 @@
                         </div>
                     </div>
                     <!--tab section 5-->
-                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_5">
+                    <input type="radio" name="tab-radio" class="tab-radio" id="tab_radio_5" checked>
                     <label for="tab_radio_5" class="tab-handler">建议方案</label>
                     <div id="tab5" class="tab-content">
                         <div class="row" style="height:100%" >
@@ -1549,7 +1549,7 @@
                                 <div id="tab5_c3">
                                     <p id="tab5_c3_title" class="p-value font-size-14">
                                         模拟配置方案：
-                                        <button id="btn_open_position" class="btn">建仓</button>
+                                        <button id="btn_create_suggest_record" class="btn">建仓</button>
                                     </p>
                                     <div id="tab5_table">
                                         <div class="row table-row table-head">
@@ -1569,271 +1569,14 @@
                                                 <p>平仓价</p>
                                             </div>
                                             <div class="table-cell">
-                                                <p>收益</p>
+                                                <p>收益/最高收益</p>
                                             </div>
                                             <div class="table-cell">
 
                                             </div>
                                         </div>
-                                        <div id="tab5_table_content" class="table-content">
-                                            <div class="row table-row">
-                                                <div class="table-cell">
-                                                    <p>美的集团</p>
-                                                    <p class="stock-code">
-                                                        <span>000336</span>
-                                                    </p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170530</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">12.00</p>
-                                                </div>
-                                                <div class="table-cell">
-
-                                                </div>
-                                                <div class="table-cell">
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number profit-red">+29.86%</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="btn-clear-position">平仓</p>
-                                                </div>
-                                            </div>
-                                            <div class="row table-row">
-                                                <div class="table-cell">
-                                                    <p>格力电器</p>
-                                                    <p class="stock-code">
-                                                        <span>000336</span>
-                                                    </p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170530</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">32.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170610</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">30.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number profit-green">-4.86%</p>
-                                                </div>
-                                                <div class="table-cell">
-
-                                                </div>
-                                            </div>
-                                            <div class="row table-row">
-                                                <div class="table-cell">
-                                                    <p>贵州茅台</p>
-                                                    <p class="stock-code">
-                                                        <span>000336</span>
-                                                    </p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170530</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">32.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170610</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">30.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number profit-red">+29.86%</p>
-                                                </div>
-                                                <div class="table-cell">
-
-                                                </div>
-                                            </div>
-                                            <div class="row table-row">
-                                                <div class="table-cell">
-                                                    <p>中邮核心竞争力</p>
-                                                    <p class="stock-code">
-                                                        <span>000336</span>
-                                                    </p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170530</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">12.00</p>
-                                                </div>
-                                                <div class="table-cell">
-
-                                                </div>
-                                                <div class="table-cell">
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number profit-red">+29.86%</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="btn-clear-position">平仓</p>
-                                                </div>
-                                            </div>
-                                            <div class="row table-row">
-                                                <div class="table-cell">
-                                                    <p>景顺长城核心</p>
-                                                    <p class="stock-code">
-                                                        <span>000336</span>
-                                                    </p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170530</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">32.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170610</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">30.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number profit-red">+29.86%</p>
-                                                </div>
-                                                <div class="table-cell">
-
-                                                </div>
-                                            </div>
-                                            <div class="row table-row">
-                                                <div class="table-cell">
-                                                    <p>景顺长城核心</p>
-                                                    <p class="stock-code">
-                                                        <span>000336</span>
-                                                    </p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170530</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">32.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170610</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">30.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number profit-red">+29.86%</p>
-                                                </div>
-                                                <div class="table-cell">
-
-                                                </div>
-                                            </div>
-                                            <div class="row table-row">
-                                                <div class="table-cell">
-                                                    <p>景顺长城核心</p>
-                                                    <p class="stock-code">
-                                                        <span>000336</span>
-                                                    </p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170530</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">32.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170610</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">30.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number profit-red">+29.86%</p>
-                                                </div>
-                                                <div class="table-cell">
-
-                                                </div>
-                                            </div>
-                                            <div class="row table-row">
-                                                <div class="table-cell">
-                                                    <p>景顺长城核心</p>
-                                                    <p class="stock-code">
-                                                        <span>000336</span>
-                                                    </p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170530</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">32.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170610</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">30.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number profit-red">+29.86%</p>
-                                                </div>
-                                                <div class="table-cell">
-
-                                                </div>
-                                            </div>
-                                            <div class="row table-row">
-                                                <div class="table-cell">
-                                                    <p>景顺长城核心</p>
-                                                    <p class="stock-code">
-                                                        <span>000336</span>
-                                                    </p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170530</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">32.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170610</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">30.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number profit-red">+29.86%</p>
-                                                </div>
-                                                <div class="table-cell">
-
-                                                </div>
-                                            </div>
-                                            <div class="row table-row">
-                                                <div class="table-cell">
-                                                    <p>景顺长城核心</p>
-                                                    <p class="stock-code">
-                                                        <span>000336</span>
-                                                    </p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170530</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">32.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">20170610</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number">30.66</p>
-                                                </div>
-                                                <div class="table-cell">
-                                                    <p class="text-number profit-red">+29.86%</p>
-                                                </div>
-                                                <div class="table-cell">
-
-                                                </div>
-                                            </div>
+                                        <div id="suggest_record" class="table-content">
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -2232,7 +1975,7 @@
         </div>
     </div>
 
-    <div id="modal_open_position">
+    <!-- <div id="modal_create_suggest_record">
         <div class="content">
             <p class="p-header">记录推荐品种</p>
             <div style="width:100%;border-bottom:1px solid #B3BBCF;margin-top:20px;"></div>
@@ -2241,7 +1984,7 @@
             </p>
             <p class="p-value font-size-14">建仓价格：以收盘价建仓</p>
             <p class="p-value font-size-14">品种代码：
-                <input>
+                <input id="input_suggest_stockcode" >
             </p>
             <div class="row modal-tool-bar">
                 <div class="col-50" style="text-align:right">
@@ -2252,7 +1995,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- <div id="modal_alert1">
         <div class="content">
@@ -2347,18 +2090,18 @@
                 modal_create_label_model.style.display = 'none';
             }
 
-            var btn_open_position = document.getElementById('btn_open_position');
-            var modal_open_position = document.getElementById('modal_open_position');
-            btn_open_position.onclick = () => {
-                mask1.style.display = 'block';
-                modal_open_position.style.display = 'block';
-            }
+            // var btn_create_suggest_record = document.getElementById('btn_create_suggest_record');
+            // var modal_create_suggest_record = document.getElementById('modal_create_suggest_record');
+            // btn_create_suggest_record.onclick = () => {
+            //     mask1.style.display = 'block';
+            //     modal_create_suggest_record.style.display = 'block';
+            // }
 
-            var btn_cancel_open_position = document.getElementById('btn_cancel_open_position');
-            btn_cancel_open_position.onclick = () => {
-                mask1.style.display = 'none';
-                modal_open_position.style.display = 'none';
-            }
+            // var btn_cancel_open_position = document.getElementById('btn_cancel_open_position');
+            // btn_cancel_open_position.onclick = () => {
+            //     mask1.style.display = 'none';
+            //     modal_create_suggest_record.style.display = 'none';
+            // }
 
             $.fn.datepicker.dates['cn'] = {
                 days: ["周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日"],

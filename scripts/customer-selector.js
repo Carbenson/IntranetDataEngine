@@ -4,14 +4,12 @@ var customer_selector;
     customer_selector.init = function () {
         MyModals.modal_send_sms.init();
         customer_selector.TabRemark.init();
+        customer_selector.TabSuggestion.init();
         $('.scroll-content').slimScroll({
             height: 'auto'
         });
         $('.table-content').slimScroll({
             height: 'auto;'
-        });
-        $('#tab5_table_content').slimScroll({
-            height: '370px;'
         });
     };
     var TabRemark;
@@ -28,11 +26,13 @@ var customer_selector;
             }
             return ModelRemarkData;
         }());
+        TabRemark.ModelRemarkData = ModelRemarkData;
         var RecordRemarkData = (function () {
             function RecordRemarkData() {
             }
             return RecordRemarkData;
         }());
+        TabRemark.RecordRemarkData = RecordRemarkData;
         var getTestData = function () {
             var testTabRemarkData = new TabRemarkData();
             var remark1 = new ModelRemarkData();
@@ -104,16 +104,12 @@ var customer_selector;
             var testData = getTestData();
             configData.listRemarkModel = testData.listRemarkModel;
             MyModals.modal_create_remark_model.init(configData.listRemarkModel.length);
-            configData.listRemarkModel.forEach(function (model) {
-                TabRemark.addModelHtml(model);
-            });
+            TabRemark.addModelHtml(configData.listRemarkModel);
         };
         var getRemarkRecord = function () {
             var testData = getTestData();
             configData.listRemarkRecord = testData.listRemarkRecord;
-            configData.listRemarkRecord.forEach(function (record) {
-                TabRemark.addRecordHtml(record);
-            });
+            TabRemark.addRecordHtml(configData.listRemarkRecord);
         };
         var bindEvent = function () {
             $(configData.divContainerRemarkRecord).slimScroll({
@@ -122,11 +118,13 @@ var customer_selector;
             });
             $(configData.btnSendRemark).on('click', function () {
                 var value = configData.textarea.value.trim();
-                var record = new RecordRemarkData();
-                record.author = '刘德华';
-                record.content = value;
-                record.dateTime = new Date().toLocaleString();
-                postSendRemark(record);
+                if (value.length > 0) {
+                    var record = new RecordRemarkData();
+                    record.author = '刘德华';
+                    record.content = value;
+                    record.dateTime = new Date().toLocaleString();
+                    postSendRemark(record);
+                }
             });
         };
         var clearModelHtml = function () {
@@ -144,6 +142,16 @@ var customer_selector;
         TabRemark.addModelHtml = function (model) {
             var html = createModelHtml(model);
             configData.divContainerRemarkModel.insertAdjacentHTML('beforeend', html);
+            if (model instanceof ModelRemarkData) {
+                bindModelEvent(model);
+            }
+            else {
+                model.forEach(function (m) {
+                    bindModelEvent(m);
+                });
+            }
+        };
+        var bindModelEvent = function (model) {
             var rowModel = $(configData.divContainerRemarkModel).find('#remark_model_' + model.id)[0];
             var modelContent = $(rowModel).find('.model-remark');
             modelContent.data('data', model);
@@ -160,35 +168,53 @@ var customer_selector;
             configData.divContainerRemarkRecord.insertAdjacentHTML('afterbegin', html);
         };
         var createModelHtml = function (model) {
-            var html = [
-                '<div id="remark_model_' + model.id + '" class="row">',
-                '    <div class="model-remark">',
-                '        ' + model.remark,
-                '        <div class="hover-show">',
-                '            <div class="triangle"></div>',
-                '            ' + model.remark,
-                '        </div>',
-                '    </div>',
-                '    <i class="icon-close"></i>',
-                '</div>'
-            ].join("");
-            return html;
+            if (model instanceof ModelRemarkData) {
+                var html = [
+                    '<div id="remark_model_' + model.id + '" class="row">',
+                    '    <div class="model-remark">',
+                    '        ' + model.remark,
+                    '        <div class="hover-show">',
+                    '            <div class="triangle"></div>',
+                    '            ' + model.remark,
+                    '        </div>',
+                    '    </div>',
+                    '    <i class="icon-close"></i>',
+                    '</div>'
+                ].join("");
+                return html;
+            }
+            else {
+                var html_1 = '';
+                model.forEach(function (m) {
+                    html_1 += createModelHtml(m);
+                });
+                return html_1;
+            }
         };
         var createRecordHtml = function (record) {
-            var html = [
-                '<div class="remark-record">',
-                '    <div class="remark-author">',
-                '        <p class="p-value font-size-16">' + record.author + '</p>',
-                '    </div>',
-                '    <div class="remark-content">',
-                '        <div class="record-1">',
-                '            <p>' + record.dateTime + '</p>',
-                '            <div>' + record.content + '</div>',
-                '        </div>',
-                '    </div>',
-                '</div>'
-            ].join("");
-            return html;
+            if (record instanceof RecordRemarkData) {
+                var html = [
+                    '<div class="remark-record">',
+                    '    <div class="remark-author">',
+                    '        <p class="p-value font-size-16">' + record.author + '</p>',
+                    '    </div>',
+                    '    <div class="remark-content">',
+                    '        <div class="record-1">',
+                    '            <p>' + record.dateTime + '</p>',
+                    '            <div>' + record.content + '</div>',
+                    '        </div>',
+                    '    </div>',
+                    '</div>'
+                ].join("");
+                return html;
+            }
+            else {
+                var html_2 = '';
+                record.forEach(function (r) {
+                    html_2 += createRecordHtml(r);
+                });
+                return html_2;
+            }
         };
         var postRemoveModel = function (model, rowModel) {
             for (var i = 0; i < configData.listRemarkModel.length; i++) {
@@ -208,5 +234,163 @@ var customer_selector;
             configData.textarea.value = '';
         };
     })(TabRemark = customer_selector.TabRemark || (customer_selector.TabRemark = {}));
+    var TabSuggestion;
+    (function (TabSuggestion) {
+        var TabSuggestionData = (function () {
+            function TabSuggestionData() {
+                this.listSuggestRecord = [];
+            }
+            return TabSuggestionData;
+        }());
+        var SuggestRecordData = (function () {
+            function SuggestRecordData() {
+            }
+            return SuggestRecordData;
+        }());
+        var getTestData = function () {
+            var testTabSuggestionData = new TabSuggestionData();
+            var record1 = new SuggestRecordData();
+            record1.stockCode = '000333';
+            record1.stockName = '美的集团';
+            record1.listStockLabel = [];
+            record1.dateTimeOpen = '20171130';
+            record1.priceOpen = 51.81;
+            record1.dateTimeClose = null;
+            record1.priceClose = null;
+            record1.profit = 10;
+            record1.profitHighest = 20;
+            var record2 = new SuggestRecordData();
+            record2.stockCode = '000651';
+            record2.stockName = '格力电器';
+            record2.listStockLabel = [];
+            record2.dateTimeOpen = '20171129';
+            record2.priceOpen = 44.28;
+            record2.dateTimeClose = '20171130';
+            record2.priceClose = 42.45;
+            record2.profit = -10;
+            record2.profitHighest = 2;
+            var record3 = new SuggestRecordData();
+            record3.stockCode = '000333';
+            record3.stockName = '美的集团';
+            record3.listStockLabel = [];
+            record3.dateTimeOpen = '20171128';
+            record3.priceOpen = 51.81;
+            record3.dateTimeClose = null;
+            record3.priceClose = null;
+            record3.profit = 10;
+            record3.profitHighest = 20;
+            var record4 = new SuggestRecordData();
+            record4.stockCode = '000651';
+            record4.stockName = '格力电器';
+            record4.listStockLabel = [];
+            record4.dateTimeOpen = '20171127';
+            record4.priceOpen = 44.28;
+            record4.dateTimeClose = '20171130';
+            record4.priceClose = 42.45;
+            record4.profit = -10;
+            record4.profitHighest = 2;
+            var record5 = new SuggestRecordData();
+            record5.stockCode = '000333';
+            record5.stockName = '美的集团';
+            record5.listStockLabel = [];
+            record5.dateTimeOpen = '20171126';
+            record5.priceOpen = 51.81;
+            record5.dateTimeClose = null;
+            record5.priceClose = null;
+            record5.profit = 10;
+            record5.profitHighest = 20;
+            var record6 = new SuggestRecordData();
+            record6.stockCode = '000651';
+            record6.stockName = '格力电器';
+            record6.listStockLabel = [];
+            record6.dateTimeOpen = '20171125';
+            record6.priceOpen = 44.28;
+            record6.dateTimeClose = '20171130';
+            record6.priceClose = 42.45;
+            record6.profit = -10;
+            record6.profitHighest = 2;
+            testTabSuggestionData.listSuggestRecord.push(record1);
+            testTabSuggestionData.listSuggestRecord.push(record2);
+            testTabSuggestionData.listSuggestRecord.push(record3);
+            testTabSuggestionData.listSuggestRecord.push(record4);
+            testTabSuggestionData.listSuggestRecord.push(record5);
+            testTabSuggestionData.listSuggestRecord.push(record6);
+            return testTabSuggestionData;
+        };
+        var configData = {
+            divContainerSuggestRecord: $('#suggest_record')[0],
+            listSuggestRecord: [],
+        };
+        TabSuggestion.init = function () {
+            MyModals.modal_create_suggest_record.init();
+            configData.divContainerSuggestRecord = $('#suggest_record')[0];
+            clearRecordHtml();
+            getSuggestRecord();
+            bindEvent();
+        };
+        var getSuggestRecord = function () {
+            var testData = getTestData();
+            configData.listSuggestRecord = testData.listSuggestRecord;
+            addRecordHtml(configData.listSuggestRecord);
+        };
+        var bindEvent = function () {
+            $(configData.divContainerSuggestRecord).slimScroll({
+                height: '370px;',
+                start: 'top'
+            });
+        };
+        var clearRecordHtml = function () {
+            configData.divContainerSuggestRecord.innerHTML = '';
+        };
+        var addRecordHtml = function (record) {
+            var html = createRecordHtml(record);
+            configData.divContainerSuggestRecord.insertAdjacentHTML('afterbegin', html);
+        };
+        var createRecordHtml = function (record) {
+            if (record instanceof SuggestRecordData) {
+                var dateTimeClose = record.dateTimeClose === null ? '' : record.dateTimeClose;
+                var priceClose = record.priceClose === null ? '' : record.priceClose;
+                var colorProfit = record.profit >= 0 ? 'red' : 'green';
+                var colorProfitHighest = record.profitHighest >= 0 ? 'red' : 'green';
+                var html = [
+                    '<div id="suggest_record_' + record.id + '" class="row table-row">',
+                    '    <div class="table-cell">',
+                    '        <p>' + record.stockName + '</p>',
+                    '        <p class="stock-code">',
+                    '            <span>' + record.stockCode + '</span>',
+                    '        </p>',
+                    '    </div>',
+                    '    <div class="table-cell">',
+                    '        <p class="text-number">' + record.dateTimeOpen + '</p>',
+                    '    </div>',
+                    '    <div class="table-cell">',
+                    '        <p class="text-number">' + record.priceOpen + '</p>',
+                    '    </div>',
+                    '    <div class="table-cell">',
+                    '        <p class="text-number">' + dateTimeClose + '</p>',
+                    '    </div>',
+                    '    <div class="table-cell">',
+                    '        <p class="text-number">' + priceClose + '</p>',
+                    '    </div>',
+                    '    <div class="table-cell">',
+                    '        <p class="text-number profit-' + colorProfit + '">' + record.profit + '%</p>',
+                    '        <p class="text-number profit-' + colorProfitHighest + '">' + record.profitHighest + '%</p>',
+                    '    </div>',
+                    '    <div class="table-cell">',
+                    '        <p class="btn-clear-position">平仓</p>',
+                    '    </div>',
+                    '</div>'
+                ].join("");
+                return html;
+            }
+            else {
+                var html_3 = '';
+                record.forEach(function (r) {
+                    html_3 += createRecordHtml(r);
+                });
+                return html_3;
+            }
+        };
+    })(TabSuggestion = customer_selector.TabSuggestion || (customer_selector.TabSuggestion = {}));
 })(customer_selector || (customer_selector = {}));
 //# sourceMappingURL=customer-selector.js.map
