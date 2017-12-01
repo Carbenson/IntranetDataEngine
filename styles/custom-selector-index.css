@@ -112,7 +112,7 @@ header {
     margin-bottom: 20px;
 }
 
-.news-box, .bulletin, .work-bill, .work-production,.bulletin-edit ,.news-box-edit{
+.news-box, .bulletin, .work-bill, .work-production, .bulletin-edit, .news-box-edit {
     width: auto;
     margin-top: 20px;
     background: #FFFFFF;
@@ -249,18 +249,39 @@ header {
     color: #FFFFFF;
 }
 
-.positive-btn:active{
+.positive-btn:active {
     background: #008CD8;
 }
-.nagetive-btn:active{
+
+.nagetive-btn:active {
     background: #787B80;
 }
-.bulletin-edit{
+
+.bulletin-edit {
     flex: 0 0 45%;
 }
-.news-box-edit{
+
+.news-box-edit {
     flex: 0 0 20%;
 }
 
+#date {
+    height: 30px;
+    width: 144px;
+    float: right;
+    margin-right: 20px;
+}
+
+#date > input {
+    padding-left: 10px;
+    width: 90%;
+}
+
+div.datepicker {
+    display: block;
+    z-index: 10;
+    top: 655px;
+    left: 985px;
+}
 
 
