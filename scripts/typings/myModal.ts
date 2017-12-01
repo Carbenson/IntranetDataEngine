@@ -820,6 +820,8 @@ namespace MyModals {
             modalNode: new Modal('', ''),
             /** 创建模拟配置方案记录的输入框 */
             inputStockCode: document.getElementById('input_suggest_stockcode') as HTMLInputElement,
+            /** 保存按钮 */
+            btnSaveCreateSuggestRecord: $('#btn_save_create_suggest_record')[0]
         }
 
         /** 初始化 */
@@ -842,16 +844,33 @@ namespace MyModals {
             let modal = new Modal('modal_create_suggest_record', 'mask1');
             configData.modalNode = modal;
             configData.inputStockCode = document.getElementById('input_suggest_stockcode') as HTMLInputElement;
-
+            configData.btnSaveCreateSuggestRecord = $('#btn_save_create_suggest_record')[0];
         };
 
         /** 事件绑定 */
         let bindEvent = () => {
             let btnCreateRemarkModel = $('#btn_create_suggest_record');
             btnCreateRemarkModel.on('click', () => {
+                configData.inputStockCode.value = '';
+                checkWordCount();
                 configData.modalNode.show();
             })
 
+            configData.inputStockCode.oninput = () => {
+                checkWordCount();
+            }
+
+            $(configData.btnSaveCreateSuggestRecord).on('click', () => {
+                let value = configData.inputStockCode.value.trim();
+                if(value.length > 0) {
+                    // TODO 提交建仓
+                    let record = new customer_selector.TabSuggestion.SuggestRecordData();
+                    record.stockCode = value;
+                    postSaveCreateSuggestRecord(record);
+                } else {
+                    return;
+                }
+            })
         }
 
         /** 创建弹出层的html */
@@ -870,7 +889,7 @@ namespace MyModals {
                 '        </p>',
                 '        <div class="row modal-tool-bar">',
                 '            <div class="col-50" style="text-align:right">',
-                '                <button id="btn_confirm_open_position" type="button" class="btn disabled" style="margin-right: 10px;">确定</button>',
+                '                <button id="btn_save_create_suggest_record" type="button" class="btn disabled" style="margin-right: 10px;">确定</button>',
                 '            </div>',
                 '            <div class="col-50">',
                 '                <button id="btn_cancel_open_position" type="button" class="btn close-modal" style="margin-left: 10px;">取消</button>',
@@ -880,6 +899,51 @@ namespace MyModals {
                 '</div>'
             ].join("");
             return html;
+        }
+
+        
+        /** 检查字数 */
+        let checkWordCount = () => {
+            let value = configData.inputStockCode.value.trim();
+            if (value.length > 0) {
+                $(configData.btnSaveCreateSuggestRecord).removeClass('disabled');
+            } else {
+                $(configData.btnSaveCreateSuggestRecord).addClass('disabled');
+            }
+        }
+
+        /** 提交建仓 */
+        let postSaveCreateSuggestRecord = (record: customer_selector.TabSuggestion.SuggestRecordData) => {
+            // TODO ajax
+            // let url = '';
+            // $.ajax({
+            //     type: 'POST',
+            //     url: url,
+            //     data: JSON.stringify(record),
+            //     dataType: 'json',
+            //     contentType: 'application/json; charset=utf-8',
+            //     success: function (rsp) {
+            //     },
+            //     error: function (xmlHttpRequest, textStatus, errorThrown) {
+            //         console.info(xmlHttpRequest.status);
+            //         console.info(xmlHttpRequest.readyState);
+            //         console.info(textStatus);
+            //         console.info(errorThrown);
+            //     }
+            // });
+
+            let date = new Date();
+            record.id = date.getTime();
+            record.stockName = '测试股票';
+            record.dateTimeOpen = formatDate(date, 'yyyyMMdd');
+            record.priceOpen = 100;
+            record.profit = 3;
+            record.profitHighest =5;
+
+            customer_selector.TabSuggestion.addRecordData(record);
+            customer_selector.TabSuggestion.addRecordHtml(record);
+            configData.modalNode.hide();
+            customer_selector.TabSuggestion.scrollRecordToTop();
         }
     }
 }

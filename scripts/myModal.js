@@ -551,6 +551,7 @@ var MyModals;
         var configData = {
             modalNode: new Modal('', ''),
             inputStockCode: document.getElementById('input_suggest_stockcode'),
+            btnSaveCreateSuggestRecord: $('#btn_save_create_suggest_record')[0]
         };
         modal_create_suggest_record.init = function () {
             removeModalNode();
@@ -566,11 +567,28 @@ var MyModals;
             var modal = new Modal('modal_create_suggest_record', 'mask1');
             configData.modalNode = modal;
             configData.inputStockCode = document.getElementById('input_suggest_stockcode');
+            configData.btnSaveCreateSuggestRecord = $('#btn_save_create_suggest_record')[0];
         };
         var bindEvent = function () {
             var btnCreateRemarkModel = $('#btn_create_suggest_record');
             btnCreateRemarkModel.on('click', function () {
+                configData.inputStockCode.value = '';
+                checkWordCount();
                 configData.modalNode.show();
+            });
+            configData.inputStockCode.oninput = function () {
+                checkWordCount();
+            };
+            $(configData.btnSaveCreateSuggestRecord).on('click', function () {
+                var value = configData.inputStockCode.value.trim();
+                if (value.length > 0) {
+                    var record = new customer_selector.TabSuggestion.SuggestRecordData();
+                    record.stockCode = value;
+                    postSaveCreateSuggestRecord(record);
+                }
+                else {
+                    return;
+                }
             });
         };
         var createModalHtml = function () {
@@ -588,7 +606,7 @@ var MyModals;
                 '        </p>',
                 '        <div class="row modal-tool-bar">',
                 '            <div class="col-50" style="text-align:right">',
-                '                <button id="btn_confirm_open_position" type="button" class="btn disabled" style="margin-right: 10px;">确定</button>',
+                '                <button id="btn_save_create_suggest_record" type="button" class="btn disabled" style="margin-right: 10px;">确定</button>',
                 '            </div>',
                 '            <div class="col-50">',
                 '                <button id="btn_cancel_open_position" type="button" class="btn close-modal" style="margin-left: 10px;">取消</button>',
@@ -598,6 +616,28 @@ var MyModals;
                 '</div>'
             ].join("");
             return html;
+        };
+        var checkWordCount = function () {
+            var value = configData.inputStockCode.value.trim();
+            if (value.length > 0) {
+                $(configData.btnSaveCreateSuggestRecord).removeClass('disabled');
+            }
+            else {
+                $(configData.btnSaveCreateSuggestRecord).addClass('disabled');
+            }
+        };
+        var postSaveCreateSuggestRecord = function (record) {
+            var date = new Date();
+            record.id = date.getTime();
+            record.stockName = '测试股票';
+            record.dateTimeOpen = formatDate(date, 'yyyyMMdd');
+            record.priceOpen = 100;
+            record.profit = 3;
+            record.profitHighest = 5;
+            customer_selector.TabSuggestion.addRecordData(record);
+            customer_selector.TabSuggestion.addRecordHtml(record);
+            configData.modalNode.hide();
+            customer_selector.TabSuggestion.scrollRecordToTop();
         };
     })(modal_create_suggest_record = MyModals.modal_create_suggest_record || (MyModals.modal_create_suggest_record = {}));
 })(MyModals || (MyModals = {}));

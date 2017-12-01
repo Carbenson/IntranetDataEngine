@@ -1,6 +1,28 @@
+const formatDate = (date: Date, fmt: string) => {
+    var o = {
+        "M+": date.getMonth() + 1, //月份 
+        "d+": date.getDate(), //日 
+        "h+": date.getHours(), //小时 
+        "m+": date.getMinutes(), //分 
+        "s+": date.getSeconds(), //秒 
+        "q+": Math.floor((date.getMonth() + 3) / 3), //季度 
+        "S": date.getMilliseconds() //毫秒 
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o) {
+        // if (new RegExp("(" + k + ")").test(fmt)) {
+        //     fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        // }
+    }
+        
+    return fmt;
+}
+
 namespace customer_selector {
 
     export let init = () => {
+
+
 
         MyModals.modal_send_sms.init();
         customer_selector.TabRemark.init();
@@ -206,7 +228,7 @@ namespace customer_selector {
 
             $(configData.btnSendRemark).on('click', () => {
                 let value = configData.textarea.value.trim();
-                if(value.length > 0) {
+                if (value.length > 0) {
                     let record = new RecordRemarkData();
                     record.author = '刘德华';
                     record.content = value;
@@ -421,7 +443,7 @@ namespace customer_selector {
         }
 
         /** 模拟配置方案记录数据结构 */
-        class SuggestRecordData {
+        export class SuggestRecordData {
             /** 模拟配置方案记录id */
             id: number;
             /** 股票代码 */
@@ -440,7 +462,7 @@ namespace customer_selector {
             priceClose: number | null;
             /** 收益 */
             profit: number;
-
+            /** 建仓后最高收益率 */
             profitHighest: number;
         }
 
@@ -525,7 +547,7 @@ namespace customer_selector {
             /** 模拟配置方案记录的容器 */
             divContainerSuggestRecord: $('#suggest_record')[0],
             /** 模拟配置方案记录的数据链表 */
-            listSuggestRecord: [] as Array<SuggestRecordData>,
+            listSuggestRecord: [] as Array < SuggestRecordData > ,
         }
 
         /** 初始化Tab页面的建议方案页面 */
@@ -533,7 +555,7 @@ namespace customer_selector {
             MyModals.modal_create_suggest_record.init();
 
             configData.divContainerSuggestRecord = $('#suggest_record')[0];
-            
+
             clearRecordHtml();
 
             getSuggestRecord();
@@ -573,6 +595,11 @@ namespace customer_selector {
 
         }
 
+        /** 添加模拟配置方案记录数据 */
+        export let addRecordData = (record: SuggestRecordData) => {
+            configData.listSuggestRecord.push(record);
+        }
+
         /** 清空模拟配置方案记录的所有记录html节点 */
         let clearRecordHtml = () => {
             configData.divContainerSuggestRecord.innerHTML = '';
@@ -581,7 +608,7 @@ namespace customer_selector {
         /** 向模拟配置方案记录容器内添加记录html节点
          * @param  {SuggestRecordData|Array<SuggestRecordData>} record 模拟配置方案记录数据
          */
-        let addRecordHtml = (record: SuggestRecordData | Array < SuggestRecordData > ) => {
+        export let addRecordHtml = (record: SuggestRecordData | Array < SuggestRecordData > ) => {
             let html = createRecordHtml(record);
             configData.divContainerSuggestRecord.insertAdjacentHTML('afterbegin', html);
         }
@@ -592,8 +619,8 @@ namespace customer_selector {
          */
         let createRecordHtml = (record: SuggestRecordData | Array < SuggestRecordData > ): string => {
             if (record instanceof SuggestRecordData) {
-                let dateTimeClose = record.dateTimeClose === null ? '' : record.dateTimeClose;
-                let priceClose = record.priceClose === null ? '' : record.priceClose;
+                let dateTimeClose = record.dateTimeClose === null || record.dateTimeClose === undefined ? '' : record.dateTimeClose;
+                let priceClose = record.priceClose === null || record.priceClose === undefined ? '' : record.priceClose;
                 let colorProfit = record.profit >= 0 ? 'red' : 'green';
                 let colorProfitHighest = record.profitHighest >= 0 ? 'red' : 'green';
                 let html = [
@@ -634,6 +661,13 @@ namespace customer_selector {
                 return html;
 
             }
+        }
+
+        /** 模拟配置方案记录滚动到顶部 */
+        export let scrollRecordToTop = () => {
+            $(configData.divContainerSuggestRecord).slimScroll({
+                scrollTo: '0px'
+            });
         }
 
     }

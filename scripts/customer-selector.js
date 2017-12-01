@@ -1,4 +1,20 @@
 "use strict";
+var formatDate = function (date, fmt) {
+    var o = {
+        "M+": date.getMonth() + 1,
+        "d+": date.getDate(),
+        "h+": date.getHours(),
+        "m+": date.getMinutes(),
+        "s+": date.getSeconds(),
+        "q+": Math.floor((date.getMonth() + 3) / 3),
+        "S": date.getMilliseconds()
+    };
+    if (/(y+)/.test(fmt))
+        fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o) {
+    }
+    return fmt;
+};
 var customer_selector;
 (function (customer_selector) {
     customer_selector.init = function () {
@@ -247,6 +263,7 @@ var customer_selector;
             }
             return SuggestRecordData;
         }());
+        TabSuggestion.SuggestRecordData = SuggestRecordData;
         var getTestData = function () {
             var testTabSuggestionData = new TabSuggestionData();
             var record1 = new SuggestRecordData();
@@ -331,7 +348,7 @@ var customer_selector;
         var getSuggestRecord = function () {
             var testData = getTestData();
             configData.listSuggestRecord = testData.listSuggestRecord;
-            addRecordHtml(configData.listSuggestRecord);
+            TabSuggestion.addRecordHtml(configData.listSuggestRecord);
         };
         var bindEvent = function () {
             $(configData.divContainerSuggestRecord).slimScroll({
@@ -339,17 +356,20 @@ var customer_selector;
                 start: 'top'
             });
         };
+        TabSuggestion.addRecordData = function (record) {
+            configData.listSuggestRecord.push(record);
+        };
         var clearRecordHtml = function () {
             configData.divContainerSuggestRecord.innerHTML = '';
         };
-        var addRecordHtml = function (record) {
+        TabSuggestion.addRecordHtml = function (record) {
             var html = createRecordHtml(record);
             configData.divContainerSuggestRecord.insertAdjacentHTML('afterbegin', html);
         };
         var createRecordHtml = function (record) {
             if (record instanceof SuggestRecordData) {
-                var dateTimeClose = record.dateTimeClose === null ? '' : record.dateTimeClose;
-                var priceClose = record.priceClose === null ? '' : record.priceClose;
+                var dateTimeClose = record.dateTimeClose === null || record.dateTimeClose === undefined ? '' : record.dateTimeClose;
+                var priceClose = record.priceClose === null || record.priceClose === undefined ? '' : record.priceClose;
                 var colorProfit = record.profit >= 0 ? 'red' : 'green';
                 var colorProfitHighest = record.profitHighest >= 0 ? 'red' : 'green';
                 var html = [
@@ -390,6 +410,11 @@ var customer_selector;
                 });
                 return html_3;
             }
+        };
+        TabSuggestion.scrollRecordToTop = function () {
+            $(configData.divContainerSuggestRecord).slimScroll({
+                scrollTo: '0px'
+            });
         };
     })(TabSuggestion = customer_selector.TabSuggestion || (customer_selector.TabSuggestion = {}));
 })(customer_selector || (customer_selector = {}));
