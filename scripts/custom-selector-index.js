@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
 
@@ -5,29 +6,12 @@ $(document).ready(function () {
 
 })
 
-var indexPage= new function () {
+var indexPage = new function () {
     this.init = function () {
-
 
         $('div.normal-text.bulletin-text').slimScroll({
             height: '114px'
         });
-
-
-        // $.datepicker.dates['cn'] = {
-        //     days: ["周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日"],
-        //     daysShort: ["日", "一", "二", "三", "四", "五", "六", "七"],
-        //     daysMin: ["日", "一", "二", "三", "四", "五", "六", "七"],
-        //     months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
-        //     monthsShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
-        //     today: "今天",
-        //     clear: "清除",
-        //     format: "yyyy.mm.dd",
-        //     titleFormat: "yyyy年 m月",
-        //     /* Leverages same syntax as 'format' */
-        //     weekStart: 0
-        // };
-
 
         $.fn.datepicker.dates['cn'] = {
             days: ["周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日"],
@@ -41,16 +25,30 @@ var indexPage= new function () {
             weekStart: 0
         };
 
-
         $('.input-group.date').datepicker({
             language: 'cn',
             orientation: "bottom left",
             autoclose: true,
             startView: 1,
             minViewMode: 1,
-            maxViewMode:2,
+            maxViewMode: 2,
             forceParse: false,
         });
+
+        $("#head_index").click(function () {
+            $("#index_page").show();
+            $("#edit_news_page").hide();
+            $("#head_index").removeClass("header-btn").addClass("header-btn-selected")
+            $("#head_edit_news").removeClass("header-btn-selected").addClass("header-btn")
+        })
+
+        $("#head_edit_news").click(function () {
+            $("#edit_news_page").show();
+            $("#index_page").hide();
+            $("#head_edit_news").removeClass("header-btn").addClass("header-btn-selected")
+            $("#head_index").removeClass("header-btn-selected").addClass("header-btn")
+        })
+
 
     }
 

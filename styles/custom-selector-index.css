@@ -32,12 +32,13 @@ header {
 }
 
 .header-btn {
+    margin-top: 6px;
     padding-left: 15px;
     padding-right: 15px;
-    line-height: 70px;
-    font-size: 18px;
-    color: white;
-
+    line-height: 58px;
+    color: #ffffff;
+    border-bottom: solid #2D3C53 6px;
+    display: inline-block
 }
 
 .header-btn-selected {
@@ -269,7 +270,7 @@ header {
     height: 30px;
     width: 144px;
     float: right;
-    margin-right: 20px;
+    margin-right: 2px;
 }
 
 #date > input {
