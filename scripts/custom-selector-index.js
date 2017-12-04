@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
 
@@ -9,6 +8,11 @@ $(document).ready(function () {
 var indexPage = new function () {
     this.init = function () {
 
+        initViews();
+
+    }
+
+    function initViews() {
         $('div.normal-text.bulletin-text').slimScroll({
             height: '114px'
         });
@@ -22,8 +26,9 @@ var indexPage = new function () {
             format: "yyyy年-m月",
             titleFormat: "yyyy",
             /* Leverages same syntax as 'format' */
-            weekStart: 0
+            weekStart: 0,
         };
+
 
         $('.input-group.date').datepicker({
             language: 'cn',
@@ -33,7 +38,14 @@ var indexPage = new function () {
             minViewMode: 1,
             maxViewMode: 2,
             forceParse: false,
+
         });
+
+
+        $('.input-group.date').datepicker('setDate', new Date());
+        $('.input-group.date').datepicker().on('changeMonth', function (e) {
+            getJog(e.date.getFullYear(), e.date.getMonth() + 1)
+        })
 
         $("#head_index").click(function () {
             $("#index_page").show();
@@ -48,8 +60,11 @@ var indexPage = new function () {
             $("#head_edit_news").removeClass("header-btn").addClass("header-btn-selected")
             $("#head_index").removeClass("header-btn-selected").addClass("header-btn")
         })
+    }
 
-
+    /**获取工作成果**/
+    function getJog(year, month) {
+        // alert(year+"-"+month);
     }
 
 }
