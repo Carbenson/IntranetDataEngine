@@ -1,16 +1,21 @@
 "use strict";
 var index;
 (function (index) {
+    var baseUrl = "http://172.19.62.235:8082/mockjsdata/15";
     $(document).ready(function () {
         new indexPage();
     });
-    function getJog(fullYear, number) {
-    }
     var indexPage = (function () {
         function indexPage() {
-            $('div.normal-text.bulletin-text').slimScroll({
-                height: '114px'
-            });
+            this.initViews();
+            this.initDate();
+        }
+        indexPage.prototype.initViews = function () {
+            this.initScrollView();
+            this.initDatepicker();
+            this.initHeader();
+        };
+        indexPage.prototype.initDatepicker = function () {
             $.fn.datepicker.dates['cn'] = {
                 days: ["周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日"],
                 daysShort: ["日", "一", "二", "三", "四", "五", "六", "七"],
@@ -32,8 +37,10 @@ var index;
             });
             $('.input-group.date').datepicker('setDate', new Date());
             $('.input-group.date').datepicker().on('changeMonth', function (e) {
-                getJog(e.date.getFullYear(), e.date.getMonth() + 1);
+                getJogResult(e.date.getFullYear(), e.date.getMonth() + 1);
             });
+        };
+        indexPage.prototype.initHeader = function () {
             $("#head_index").click(function () {
                 $("#index_page").show();
                 $("#edit_news_page").hide();
@@ -46,8 +53,74 @@ var index;
                 $("#head_edit_news").removeClass("header-btn").addClass("header-btn-selected");
                 $("#head_index").removeClass("header-btn-selected").addClass("header-btn");
             });
-        }
+        };
+        indexPage.prototype.initScrollView = function () {
+            $('div.normal-text.bulletin-text').slimScroll({
+                height: '114px',
+            });
+        };
+        indexPage.prototype.initDate = function () {
+            this.getRcUndoneToday();
+            this.getRcDoneMonth();
+            this.getRcUndone();
+        };
+        indexPage.prototype.getRcUndoneToday = function () {
+            getData({
+                url: baseUrl + "/api/get_rc_undone_today",
+                data: {},
+                type: "get",
+                onSuccess: function (json) {
+                    console.info(json);
+                }
+            });
+        };
+        indexPage.prototype.getRcDoneMonth = function () {
+            getData({
+                url: baseUrl + "/api/get_rc_done_month",
+                data: {},
+                type: "get",
+                onSuccess: function (json) {
+                    console.info(json);
+                }
+            });
+        };
+        indexPage.prototype.getRcUndone = function () {
+            getData({
+                url: baseUrl + "/api/get_rc_undone",
+                data: {},
+                type: "get",
+                onSuccess: function (json) {
+                    console.info(json);
+                }
+            });
+        };
         return indexPage;
     }());
+    function getJogResult(fullYear, number) {
+        getData({
+            url: "",
+            data: {},
+            type: "",
+            onSuccess: function (rsp) {
+            }
+        });
+    }
+    function getData(parameters) {
+        var url = parameters.url, data = parameters.data, type = parameters.type, onSuccess = parameters.onSuccess;
+        $.ajax({
+            type: type,
+            url: url,
+            data: data,
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: onSuccess,
+            error: function (xmlHttpRequest, textStatus, errorThrown) {
+                console.info(xmlHttpRequest.status);
+                console.info(xmlHttpRequest.readyState);
+                console.info(textStatus);
+                console.info(errorThrown);
+            }
+        });
+    }
 })(index || (index = {}));
 //# sourceMappingURL=index.js.map
